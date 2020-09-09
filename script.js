@@ -1,4 +1,4 @@
 document.addEventListener("DOMContentLoaded", function (event) {
   const cvs = document.getElementByID("game");
-  const ctx = cvs
+  const ctx = cvs.getContext("2d")
 });
