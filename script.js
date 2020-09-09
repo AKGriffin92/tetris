@@ -1,3 +1,4 @@
 document.addEventListener("DOMContentLoaded", function (event) {
-	//code goes here
+  const cvs = document.getElementByID("game");
+
 });
