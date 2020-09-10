@@ -43,5 +43,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
       [j, "orange"],
       [i, "cyan"],
       [o, "blue"]
-    ]
+    ] 
+  
+  //create piece object
+  
+  function piece(tetromino, color){
+      
+    this.tetromino = tetromino;
+    this.color = color;
+    this.tetrominoRotation = 0;
+    this.activeTetromino = this.tetromino[this.tetrominoRotation]
+    
+    //starting position
+    this.x = 3;
+    this.y = -2;
+  }
 });
