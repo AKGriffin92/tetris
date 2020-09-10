@@ -30,7 +30,32 @@ document.addEventListener("DOMContentLoaded", function (event) {
     for(r = 0; r < row; r++){
       for(c = 0; c < col; c++){
         drawSquare(c, r, board[r][c]);
-      }
-    }
+      };
+    };
+  };
+  
+    //the pieces and their colors
+    const pieces = [
+      [z, "red"],
+      [s, "green"],
+      [t, "yellow:],
+      [l, "purple"],
+      [j, "orange"],
+      [i, "cyan"],
+      [o, "blue"]
+    ] 
+  
+  //create piece object
+  
+  function piece(tetromino, color){
+      
+    this.tetromino = tetromino;
+    this.color = color;
+    this.tetrominoRotation = 0;
+    this.activeTetromino = this.tetromino[this.tetrominoRotation]
+    
+    //starting position
+    this.x = 3;
+    this.y = -2;
   }
 });
