@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     const pieces = [
       [z, "red"],
       [s, "green"],
-      [t, "yellow":],
+      [t, "yellow"],
       [l, "purple"],
       [j, "orange"],
       [i, "cyan"],
