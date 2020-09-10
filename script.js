@@ -34,6 +34,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
     };
   };
   
+  drawBoard();
+  
     //the pieces and their colors
     const pieces = [
       [z, "red"],
