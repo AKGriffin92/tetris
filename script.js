@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   const vacant = "white"
   
   //draw a square
-  function draw(x, y, color) {
+  function drawsSquare(x, y, color) {
     ctx.fillStyle = color;
     ctx.fillRect(x*sq,y*sq,sq,sq);
     
@@ -22,6 +22,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
     board[r] = [];
     for(c=0; c < col; c++){
       board[r][c] = vacant;
+    }
+  }
+  
+  //draw game board
+  function drawBoard(){
+    for(r = 0; r < row; r++){
+      for(c = 0; c < col; c++){
+        drawSquare(c, r, board[r][c]);
+      }
     }
   }
 });
