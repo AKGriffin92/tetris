@@ -7,7 +7,7 @@ const col = 10;
 const vacant = "white"
 
 //draw a square
-function drawsSquare(x, y, color) {
+function drawSquare(x, y, color) {
   ctx.fillStyle = color;
   ctx.fillRect(x*sq,y*sq,sq,sq);
 
