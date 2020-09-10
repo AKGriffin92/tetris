@@ -37,15 +37,20 @@ document.addEventListener("DOMContentLoaded", function (event) {
   drawBoard();
   
     //the pieces and their colors
+  
     const pieces = [
       [z, "red"],
       [s, "green"],
-      [t, "yellow:],
+      [t, "yellow":],
       [l, "purple"],
       [j, "orange"],
       [i, "cyan"],
       [o, "blue"]
-    ] 
+    ];
+  
+  //initiate a piece the first piece in its first rotation
+  
+  let p = new piece(pieces[0][0])
   
   //create piece object
   
@@ -59,5 +64,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     //starting position
     this.x = 3;
     this.y = -2;
-  }
+  };
+  
+
 });
