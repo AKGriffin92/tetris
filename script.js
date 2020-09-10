@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     };
   };
   
-  p.draw()
+  p.draw();
   
 
 });
