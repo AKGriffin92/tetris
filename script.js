@@ -12,7 +12,7 @@ function drawSquare(x, y, color) {
   ctx.fillRect(x*sq,y*sq,sq,sq);
 
   ctx.strokeStyle = "BLACK";
-  ctx.strokeRect(x,y,sq,sq)
+  ctx.strokeRect(x*sq,y*sq,sq,sq)
 }
 
 //create game board
