@@ -64,7 +64,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
     //starting position
     this.x = 3;
     this.y = -2;
+  };  
+  
+  //draw a piece to the board
+  
+  piece.prototype.draw = function() {
+    for(r = 0; r < this.activeTetromino.length; r++){
+      for(c = 0; c < this.activeTetromino,length; c++){
+        drawSquare(this.x + c,this.y + r, this.color);
+      };
+    };
   };
+  
+  p.draw()
   
 
 });
