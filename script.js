@@ -37,15 +37,20 @@ document.addEventListener("DOMContentLoaded", function (event) {
   drawBoard();
   
     //the pieces and their colors
+  
     const pieces = [
       [z, "red"],
       [s, "green"],
-      [t, "yellow:],
+      [t, "yellow"],
       [l, "purple"],
       [j, "orange"],
       [i, "cyan"],
       [o, "blue"]
-    ] 
+    ];
+  
+  //initiate a piece the first piece in its first rotation
+  
+  let p = new piece(pieces[0][0])
   
   //create piece object
   
@@ -59,5 +64,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
     //starting position
     this.x = 3;
     this.y = -2;
-  }
+  };  
+  
+  //draw a piece to the board
+  
+  piece.prototype.draw = function() {
+    for(r = 0; r < this.activeTetromino.length; r++){
+      for(c = 0; c < this.activeTetromino,length; c++){
+        drawSquare(this.x + c,this.y + r, this.color);
+      };
+    };
+  };
+  
+  p.draw();
+  
+
 });
