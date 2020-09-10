@@ -49,7 +49,7 @@ drawBoard();
 
 //initiate a piece the first piece in its first rotation
 
-let p = new piece(pieces[0][0])
+let p = new piece(pieces[0][0], pieces[0][1])
 
 //create piece object
 
