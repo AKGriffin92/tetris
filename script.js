@@ -61,8 +61,8 @@ function piece(tetromino, color){
   this.activeTetromino = this.tetromino[this.tetrominoRotation]
 
   //starting position
-  this.x = 3;
-  this.y = -2;
+  this.x = 0;
+  this.y = 0;
 };  
 
 //draw a piece to the board
@@ -70,10 +70,10 @@ function piece(tetromino, color){
 piece.prototype.draw = function() {
   for(r = 0; r < this.activeTetromino.length; r++){
     for(c = 0; c < this.activeTetromino,length; c++){
+        console.log("test")
       //only draw occupied squares
       if(this.activeTetromino[r][c]){
         drawSquare(this.x + c,this.y + r, this.color);
-        console.log("test")
       };
     };
   };
