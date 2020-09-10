@@ -71,6 +71,7 @@ piece.prototype.draw = function() {
   for(r = 0; r < this.activeTetromino.length; r++){
     for(c = 0; c < this.activeTetromino,length; c++){
       drawSquare(this.x + c,this.y + r, this.color);
+      console.log("test")
     };
   };
 };
