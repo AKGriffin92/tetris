@@ -1,4 +1,4 @@
-const cvs = document.getElementByID("game");
+const cvs = document.getElementById("game");
 const ctx = cvs.getContext("2d")
 
 const sq = 20;
