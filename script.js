@@ -125,13 +125,13 @@ piece.prototype.rotate = function(){
 document.addEventListener("keydown", control);
 
 function control(event){
-  if(event.keycode == 37){
+  if(event.keyCode == 37){
     p.moveLeft();
-  }else if(event.keycode == 38){
+  }else if(event.keyCode == 38){
     p.rotate();
-  }else if(event.keycode == 39){
+  }else if(event.keyCode == 39){
     p.moveRight();
-  }else if(event.keycode == 40){
+  }else if(event.keyCode == 40){
     p.moveDown();
   };
 };
