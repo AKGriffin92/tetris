@@ -81,7 +81,7 @@ piece.prototype.draw = function() {
 // undraw a piece
 
 
-piece.prototype.draw = function() {
+piece.prototype.undraw = function() {
   for(r = 0; r < this.activeTetromino.length; r++){
     for(c = 0; c < this.activeTetromino.length; c++){
       //only draw occupied squares
