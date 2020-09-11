@@ -65,31 +65,30 @@ function piece(tetromino, color){
   this.y = 0;
 };  
 
-//draw a piece to the board
+//create fill function
 
-piece.prototype.draw = function() {
+piece.prototype.fill = function(color) {
   for(r = 0; r < this.activeTetromino.length; r++){
     for(c = 0; c < this.activeTetromino.length; c++){
       //only draw occupied squares
       if(this.activeTetromino[r][c]){
-        drawSquare(this.x + c,this.y + r, this.color);
+        drawSquare(this.x + c,this.y + r, color);
       };
     };
   };
 };
 
+
+//draw a piece to the board
+
+piece.prototype.draw = function() {
+  this.fill(this.color);
+};
+
 // undraw a piece
 
-
 piece.prototype.undraw = function() {
-  for(r = 0; r < this.activeTetromino.length; r++){
-    for(c = 0; c < this.activeTetromino.length; c++){
-      //only draw occupied squares
-      if(this.activeTetromino[r][c]){
-        drawSquare(this.x + c,this.y + r, vacant);
-      };
-    };
-  };
+  this.fill(vacant);
 };
 
 //move down the piece
