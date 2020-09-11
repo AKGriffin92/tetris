@@ -1,10 +1,10 @@
 const cvs = document.getElementById("game");
-const ctx = cvs.getContext("2d")
+const ctx = cvs.getContext("2d");
 
 const sq = 20;
-const row = 20
+const row = 20;
 const col = 10;
-const vacant = "white"
+const vacant = "white";
 
 //draw a square
 function drawSquare(x, y, color) {
