@@ -132,7 +132,7 @@ function control(event){
   }else if(event.keycode == 39){
     p.moveRight();
   }else if(event.keycode == 40){
-    p.moveDown():
+    p.moveDown();
   };
 };
 
