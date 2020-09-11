@@ -86,8 +86,15 @@ piece.prototype.moveDown = function (){
 
 
 //drop the piece down a line
+
+let dropStart = Date.now();
 function drop(){
-  p.moveDown()
+  let now = Date.now();
+  let delta = now - dropStart;
+  if (delta > 1000){
+    p.moveDown();
+    dropStart = Date.now();
+  };
   requestAnimationFrame(drop)
 };
 
