@@ -69,7 +69,7 @@ function piece(tetromino, color){
 
 piece.prototype.draw = function() {
   for(r = 0; r < this.activeTetromino.length; r++){
-    for(c = 0; c < this.activeTetromino,length; c++){
+    for(c = 0; c < this.activeTetromino.length; c++){
       //only draw occupied squares
       if(this.activeTetromino[r][c]){
         drawSquare(this.x + c,this.y + r, this.color);
