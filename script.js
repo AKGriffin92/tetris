@@ -90,3 +90,5 @@ function drop(){
   p.moveDown()
   requestAnimationFrame(drop)
 };
+
+drop();
