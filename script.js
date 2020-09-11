@@ -112,6 +112,14 @@ piece.prototype.moveLeft = function (){
   this.draw();
 };
 
+//rotate the piece
+piece.prototype.rotate = function(){
+  this.undraw();
+  this.tetrominoRotation = (this.tetrominoRotation + 1) % this.tetromino.length;
+  this.activeTetromino = this.tetromino[this.tetrominoRotation];
+  this.draw()
+};
+
 //drop the piece down a line
 
 let dropStart = Date.now();
