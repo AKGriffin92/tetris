@@ -120,7 +120,23 @@ piece.prototype.rotate = function(){
   this.draw()
 };
 
-//drop the piece down a line
+//control the piece
+
+document.addEventListener("keydown", control);
+
+function control(event){
+  if(event.keycode == 37){
+    p.moveLeft();
+  }else if(event.keycode == 38){
+    p.rotate();
+  }else if(event.keycode == 39){
+    p.moveRight();
+  }else if(event.keycode == 40){
+    p.moveDown():
+  };
+};
+
+//drop the piece down every 1 second
 
 let dropStart = Date.now();
 function drop(){
