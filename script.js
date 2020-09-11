@@ -73,7 +73,6 @@ piece.prototype.draw = function() {
       //only draw occupied squares
       if(this.activeTetromino[r][c]){
         drawSquare(this.x + c,this.y + r, this.color);
-        console.log("test");
       };
     };
   };
