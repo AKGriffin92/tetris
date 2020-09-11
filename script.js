@@ -79,4 +79,3 @@ piece.prototype.draw = function() {
 };
 
 p.draw();
-console.log("test");
