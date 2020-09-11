@@ -91,4 +91,5 @@ function drop(){
   requestAnimationFrame(drop)
 };
 
+draw();
 drop();
