@@ -61,7 +61,7 @@ function piece(tetromino, color){
   this.activeTetromino = this.tetromino[this.tetrominoRotation]
 
   //starting position
-  this.x = 0;
+  this.x = 3;
   this.y = 0;
 };  
 
@@ -78,4 +78,8 @@ piece.prototype.draw = function() {
   };
 };
 
-p.draw();
+//drop down the piece
+piece.prototype.moveDown = function (){
+  this.y++;
+  this.draw;
+};
