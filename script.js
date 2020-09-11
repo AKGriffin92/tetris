@@ -98,6 +98,12 @@ piece.prototype.moveDown = function (){
   this.draw();
 };
 
+//move the piece right
+piece.prototype.moveRight = function (){
+  this.undraw();
+  this.x++;
+  this.draw();
+};
 
 //drop the piece down a line
 
