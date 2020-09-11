@@ -103,6 +103,13 @@ piece.prototype.moveRight = function (){
   this.undraw();
   this.x++;
   this.draw();
+}
+
+//move the piece left
+piece.prototype.moveLeft = function (){
+  this.undraw();
+  this.x--;
+  this.draw();
 };
 
 //drop the piece down a line
