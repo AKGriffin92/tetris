@@ -81,7 +81,7 @@ piece.prototype.draw = function() {
 //drop down the piece
 piece.prototype.moveDown = function (){
   this.y++;
-  this.draw;
+  this.draw();
 };
 
 
