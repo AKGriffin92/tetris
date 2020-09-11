@@ -98,5 +98,5 @@ function drop(){
   requestAnimationFrame(drop)
 };
 
-draw();
+p.draw();
 drop();
