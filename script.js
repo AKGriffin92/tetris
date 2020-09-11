@@ -83,3 +83,10 @@ piece.prototype.moveDown = function (){
   this.y++;
   this.draw;
 };
+
+
+//drop the piece down a line
+function drop(){
+  p.moveDown()
+  requestAnimationFrame(drop)
+};
