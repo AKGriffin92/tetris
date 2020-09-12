@@ -97,15 +97,15 @@ piece.prototype.moveDown = function (){
     this.undraw();
     this.y++;
     this.draw();
+    secondTimer = 0;
   }else{
     //lock the piece and generate a new one
   };
-  press = 0;
 };
 
 //move the piece right
 piece.prototype.moveRight = function (){
-  if(!this.collision(0,1, this.activeTetromino)){
+  if(!this.collision(1,0, this.activeTetromino)){
     this.undraw();
     this.x++;
     this.draw();
@@ -114,7 +114,7 @@ piece.prototype.moveRight = function (){
 
 //move the piece left
 piece.prototype.moveLeft = function (){
-  if(!this.collision(0,1, this.activeTetromino)){
+  if(!this.collision(-1,0, this.activeTetromino)){
     this.undraw();
     this.x--;
     this.draw();
@@ -167,25 +167,31 @@ piece.prototype.collision = function(x,y,piece){
 
 document.addEventListener("keydown", control);
 
+const keys = [37, 38, 39, 40, 65, 87, 68, 83]
+
 function control(event){
-  if(event.keyCode == 37){
-    p.moveLeft();
-    dropStart = interrupt();
-  }else if(event.keyCode == 38){
-    p.rotate();
-    dropStart = interrupt();
-  }else if(event.keyCode == 39){
-    p.moveRight();
-    dropStart = interrupt();
-  }else if(event.keyCode == 40){
-    p.moveDown();
+  let keyPress = event.keyCode;
+  
+  if(keys.includes(keyPress)){
+    p.resetTimer();
   };
+  
+  if(keyPress === 37 || keyPress === 65){
+    p.moveLeft();
+  }else if(keyPress === 38 || keyPress === 87){
+    p.rotate();
+  }else if(keyPress === 39 || keyPress === 68){
+    p.moveRight();
+  }else if(keyPress === 40 || keyPress === 83){
+    p.moveDown();
+  };  
 };
 
 //drop the piece down every 1 second
 
 let dropStart = Date.now();
 function drop(){
+  let press;
   let now = Date.now();
   let delta = now - dropStart;
   if (delta > 1000){
@@ -195,15 +201,14 @@ function drop(){
   requestAnimationFrame(drop)
 };
 
-// 
-
-let press = 0;
-function interrupt(){
-  if (press === 0){
-    dropStart = Date.now()
-    press++;    
-  };
-};
-
 p.draw();
 drop();
+
+let secondTimer;
+piece.prototype.resetTimer = function(){
+  if(!secondTimer){
+    dropStart = Date.now();
+    secondTimer = 1;
+  };
+
+};
