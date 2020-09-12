@@ -104,16 +104,20 @@ piece.prototype.moveDown = function (){
 
 //move the piece right
 piece.prototype.moveRight = function (){
+  if(!this.collision(0,1, this.activeTetromino)){
     this.undraw();
-    this.X++;
+    this.x++;
     this.draw();
+  };
 };
 
 //move the piece left
 piece.prototype.moveLeft = function (){
+  if(!this.collision(0,1, this.activeTetromino)){
     this.undraw();
-    this.X--;
+    this.x--;
     this.draw();
+  };
 };
 
 //rotate the piece
