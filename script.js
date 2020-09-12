@@ -156,6 +156,7 @@ piece.prototype.collision = function(x,y,piece){
       
       //check if there is a locked piece alrready in place
       if(board[newY][newX] != vacant){
+        console(newX);
         return true;
       };
     };
