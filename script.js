@@ -104,7 +104,7 @@ piece.prototype.moveDown = function (){
 
 //move the piece right
 piece.prototype.moveRight = function (){
-  if(!this.collision(0,1, this.activeTetromino)){
+  if(!this.collision(1,0, this.activeTetromino)){
     this.undraw();
     this.x++;
     this.draw();
@@ -113,7 +113,7 @@ piece.prototype.moveRight = function (){
 
 //move the piece left
 piece.prototype.moveLeft = function (){
-  if(!this.collision(0,1, this.activeTetromino)){
+  if(!this.collision(-1,0, this.activeTetromino)){
     this.undraw();
     this.x--;
     this.draw();
