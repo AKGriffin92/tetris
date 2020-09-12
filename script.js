@@ -97,6 +97,7 @@ piece.prototype.moveDown = function (){
     this.undraw();
     this.y++;
     this.draw();
+    press--;
   }else{
     //lock the piece and generate a new one
   };
@@ -166,10 +167,15 @@ piece.prototype.collision = function(x,y,piece){
 
 document.addEventListener("keydown", control);
 
+let press = 0;
+
 function control(event){
   if(event.keyCode == 37){
     p.moveLeft();
-    dropStart = Date.now();
+    if (press = 0){
+      dropStart = Date.now();
+      press++
+    };
   }else if(event.keyCode == 38){
     p.rotate();
     dropStart = Date.now();
@@ -179,12 +185,14 @@ function control(event){
   }else if(event.keyCode == 40){
     p.moveDown();
   };
+  
 };
 
 //drop the piece down every 1 second
 
 let dropStart = Date.now();
 function drop(){
+  let press;
   let now = Date.now();
   let delta = now - dropStart;
   if (delta > 1000){
@@ -192,6 +200,13 @@ function drop(){
     dropStart = Date.now();
   };
   requestAnimationFrame(drop)
+};
+
+function resetTimer(){
+  if (press = 0){
+    dropStart = Date.now();
+    press++
+  };
 };
 
 p.draw();
