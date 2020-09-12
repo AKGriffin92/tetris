@@ -138,6 +138,8 @@ piece.prototype.rotate = function(){
   };
   
   if(!this.collision(kick, 0, nextRotation)){
+    this.undraw();
+    this.x += kick;
     this.tetrominoRotation = (this.tetrominoRotation + 1) % this.tetromino.length;
     this.activeTetromino = this.tetromino[this.tetrominoRotation];
     this.draw()
