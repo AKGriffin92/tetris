@@ -207,7 +207,7 @@ drop();
 let secondTimer;
 piece.prototype.resetTimer = function(){
   if(!secondTimer){
-    dropStart = Date.now;
+    dropStart = Date.now();
     secondTimer = 1;
   };
 
