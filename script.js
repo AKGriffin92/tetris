@@ -47,9 +47,14 @@ drawBoard();
     [o, "blue"]
   ];
 
-//initiate a piece the first piece in its first rotation
+//generate random tetromino
 
-let p = new piece(pieces[0][0], pieces[0][1])
+funtion randomPiece(){
+  let r = Math.floor(Math.random() + pieces.length);
+  return new Piece(pieces[r][0], pieces[r][1])
+};
+
+let p = randomPiece();
 
 //create piece object
 
