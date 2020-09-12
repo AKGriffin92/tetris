@@ -120,6 +120,38 @@ piece.prototype.rotate = function(){
   this.draw()
 };
 
+// collision function
+
+piece.prototype.collision = function(x,y,piece){
+  for(r = 0; r < piece.length; r++){
+    for(c = 0; c < piece.length; c++){
+      //check if square is vacant
+      if(!piece[r][c]){
+        continue;
+      };
+      // coordinates of piece after movement
+      let newX = this.x + c + x;
+      let newY = this.y + r + y;
+      
+      // conditions
+      if(newX < 0 || newX >= col || newY >= row){
+        return true;
+      };
+      
+      // skip newY < 0; board[-1] will crash game
+      if(newY < 0){
+        continue;
+      };
+      
+      //check if there is a locked piece alrready in place
+      if(board[newY][newX] != vacant){
+        return true;
+      };
+    };
+  };
+  return false;
+};
+
 //control the piece
 
 document.addEventListener("keydown", control);
