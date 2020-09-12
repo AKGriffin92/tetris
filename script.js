@@ -100,7 +100,6 @@ piece.prototype.moveDown = function (){
   }else{
     //lock the piece and generate a new one
   };
-  press = 0;
 };
 
 //move the piece right
@@ -170,13 +169,13 @@ document.addEventListener("keydown", control);
 function control(event){
   if(event.keyCode == 37){
     p.moveLeft();
-    dropStart = interrupt();
+    dropStart = Date.now();
   }else if(event.keyCode == 38){
     p.rotate();
-    dropStart = interrupt();
+    dropStart = Date.now();
   }else if(event.keyCode == 39){
     p.moveRight();
-    dropStart = interrupt();
+    dropStart = Date.now();
   }else if(event.keyCode == 40){
     p.moveDown();
   };
@@ -193,16 +192,6 @@ function drop(){
     dropStart = Date.now();
   };
   requestAnimationFrame(drop)
-};
-
-// 
-
-let press = 0;
-function interrupt(){
-  if (press === 0){
-    dropStart = Date.now()
-    press++;    
-  };
 };
 
 p.draw();
