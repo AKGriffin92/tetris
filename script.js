@@ -50,7 +50,7 @@ drawBoard();
 //generate random tetromino
 
 function randomPiece(){
-  let r = Math.floor(Math.random() + pieces.length);
+  let r = Math.floor(Math.random() * pieces.length);
   return new piece(pieces[r][0], pieces[r][1])
 };
 
