@@ -167,22 +167,17 @@ piece.prototype.collision = function(x,y,piece){
 
 document.addEventListener("keydown", control);
 
-let press = 0;
-
 function control(event){
   if(event.keyCode == 37){
     p.moveLeft();
-    resetTimer()
   }else if(event.keyCode == 38){
     p.rotate();
-    resetTimer()
   }else if(event.keyCode == 39){
     p.moveRight();
-    resetTimer()
   }else if(event.keyCode == 40){
     p.moveDown();
   };
-  
+  p.resetTimer();  
 };
 
 //drop the piece down every 1 second
@@ -199,12 +194,14 @@ function drop(){
   requestAnimationFrame(drop)
 };
 
-function resetTimer(){
-  if (press = 0){
-    dropStart = Date.now();
-    press++
-  };
-};
-
 p.draw();
 drop();
+
+let secondPress;
+piece.prototype.resetTimer(){
+  if(!secondPress){
+    dropStart = date.now;
+    secondPress = 1;
+  };
+
+};
