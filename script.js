@@ -93,31 +93,69 @@ piece.prototype.undraw = function() {
 
 //move down the piece
 piece.prototype.moveDown = function (){
-  this.undraw();
-  this.y++;
-  this.draw();
+  if(!this.collision(0,1, this.activeTetromino)){
+    this.undraw();
+    this.y++;
+    this.draw();
+  }else{
+    //lock the piece and generate a new one
+  };
 };
 
 //move the piece right
 piece.prototype.moveRight = function (){
-  this.undraw();
-  this.x++;
-  this.draw();
-}
+    this.undraw();
+    this.X++;
+    this.draw();
+};
 
 //move the piece left
 piece.prototype.moveLeft = function (){
-  this.undraw();
-  this.x--;
-  this.draw();
+    this.undraw();
+    this.X--;
+    this.draw();
 };
 
 //rotate the piece
 piece.prototype.rotate = function(){
-  this.undraw();
-  this.tetrominoRotation = (this.tetrominoRotation + 1) % this.tetromino.length;
-  this.activeTetromino = this.tetromino[this.tetrominoRotation];
-  this.draw()
+  if(!this.collision(0,0, this.activeTetromino)){
+    this.undraw();
+    this.tetrominoRotation = (this.tetrominoRotation + 1) % this.tetromino.length;
+    this.activeTetromino = this.tetromino[this.tetrominoRotation];
+    this.draw()
+  };
+};
+
+// collision function
+
+piece.prototype.collision = function(x,y,piece){
+  for(r = 0; r < piece.length; r++){
+    for(c = 0; c < piece.length; c++){
+      //check if square is vacant
+      if(!piece[r][c]){
+        continue;
+      };
+      // coordinates of piece after movement
+      let newX = this.x + c + x;
+      let newY = this.y + r + y;
+      
+      // conditions
+      if(newX < 0 || newX >= col || newY >= row){
+        return true;
+      };
+      
+      // skip newY < 0; board[-1] will crash game
+      if(newY < 0){
+        continue;
+      };
+      
+      //check if there is a locked piece alrready in place
+      if(board[newY][newX] != vacant){
+        return true;
+      };
+    };
+  };
+  return false;
 };
 
 //control the piece
@@ -127,10 +165,13 @@ document.addEventListener("keydown", control);
 function control(event){
   if(event.keyCode == 37){
     p.moveLeft();
+    dropStart = Date.now();
   }else if(event.keyCode == 38){
     p.rotate();
+    dropStart = Date.now();
   }else if(event.keyCode == 39){
     p.moveRight();
+    dropStart = Date.now();
   }else if(event.keyCode == 40){
     p.moveDown();
   };
