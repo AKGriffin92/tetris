@@ -104,20 +104,16 @@ piece.prototype.moveDown = function (){
 
 //move the piece right
 piece.prototype.moveRight = function (){
-  if(!this.collision(1,0, this.activeTetromino)){
     this.undraw();
     this.X++;
     this.draw();
-  };
 };
 
 //move the piece left
 piece.prototype.moveLeft = function (){
-  if(!this.collision(-1,0, this.activeTetromino)){
     this.undraw();
     this.X--;
     this.draw();
-  };
 };
 
 //rotate the piece
@@ -145,7 +141,6 @@ piece.prototype.collision = function(x,y,piece){
       
       // conditions
       if(newX < 0 || newX >= col || newY >= row){
-        console.log(newX)
         return true;
       };
       
@@ -156,7 +151,6 @@ piece.prototype.collision = function(x,y,piece){
       
       //check if there is a locked piece alrready in place
       if(board[newY][newX] != vacant){
-        console(newX);
         return true;
       };
     };
