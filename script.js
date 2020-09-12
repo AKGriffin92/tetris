@@ -172,16 +172,13 @@ let press = 0;
 function control(event){
   if(event.keyCode == 37){
     p.moveLeft();
-    if (press = 0){
-      dropStart = Date.now();
-      press++
-    };
+    resetTimer()
   }else if(event.keyCode == 38){
     p.rotate();
-    dropStart = Date.now();
+    resetTimer()
   }else if(event.keyCode == 39){
     p.moveRight();
-    dropStart = Date.now();
+    resetTimer()
   }else if(event.keyCode == 40){
     p.moveDown();
   };
