@@ -200,7 +200,7 @@ drop();
 let secondPress;
 piece.prototype.resetTimer = function(){
   if(!secondPress){
-    dropStart = date.now;
+    dropStart = Date.now;
     secondPress++;
   };
 
