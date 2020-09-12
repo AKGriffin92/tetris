@@ -145,6 +145,7 @@ piece.prototype.collision = function(x,y,piece){
       
       // conditions
       if(newX < 0 || newX >= col || newY >= row){
+        console.log(newX)
         return true;
       };
       
