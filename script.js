@@ -123,7 +123,8 @@ piece.prototype.moveLeft = function (){
 
 //rotate the piece
 piece.prototype.rotate = function(){
-  if(!this.collision(0,0, this.activeTetromino)){
+  let nextRotation = this.tetromino[(this.tetrominoRotation + 1)%this.tetromino.length]
+  if(!this.collision(0,0, nextRotation)){
     this.undraw();
     this.tetrominoRotation = (this.tetrominoRotation + 1) % this.tetromino.length;
     this.activeTetromino = this.tetromino[this.tetrominoRotation];
