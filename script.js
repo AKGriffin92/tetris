@@ -97,7 +97,7 @@ piece.prototype.moveDown = function (){
     this.undraw();
     this.y++;
     this.draw();
-  }else(){
+  }else{
     //lock the piece and generate a new one
   };
 };
