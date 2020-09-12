@@ -123,8 +123,23 @@ piece.prototype.moveLeft = function (){
 
 //rotate the piece
 piece.prototype.rotate = function(){
-  if(!this.collision(0,0, this.activeTetromino)){
+  let nextRotation = this.tetromino[(this.tetrominoRotation + 1)%this.tetromino.length];
+  let kick = 0;
+  
+  if(this.collision(0, 0, nextPatern)){
+    //checks to see if collision is right or left wall
+    if(this.x > col/2){
+      //it's the right wall
+      kick = -1;
+    }else{
+      //its the left wall
+      kick = 1;
+    };
+  };
+  
+  if(!this.collision(kick, 0, nextRotation)){
     this.undraw();
+    this.x += kick;
     this.tetrominoRotation = (this.tetrominoRotation + 1) % this.tetromino.length;
     this.activeTetromino = this.tetromino[this.tetrominoRotation];
     this.draw()
@@ -201,9 +216,6 @@ function drop(){
   requestAnimationFrame(drop)
 };
 
-p.draw();
-drop();
-
 let secondTimer;
 piece.prototype.resetTimer = function(){
   if(!secondTimer){
@@ -212,3 +224,6 @@ piece.prototype.resetTimer = function(){
   };
 
 };
+
+p.draw();
+drop();
