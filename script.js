@@ -126,7 +126,7 @@ piece.prototype.rotate = function(){
   let nextRotation = this.tetromino[(this.tetrominoRotation + 1)%this.tetromino.length];
   let kick = 0;
   
-  if(this.collision(0, 0, nextPatern)){
+  if(this.collision(0, 0, nextRotation)){
     //checks to see if collision is right or left wall
     if(this.x > col/2){
       //it's the right wall
