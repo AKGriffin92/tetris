@@ -198,7 +198,7 @@ p.draw();
 drop();
 
 let secondPress;
-piece.prototype.resetTimer(){
+piece.prototype.resetTimer{
   if(!secondPress){
     dropStart = date.now;
     secondPress = 1;
