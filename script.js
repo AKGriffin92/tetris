@@ -51,7 +51,7 @@ drawBoard();
 
 function randomPiece(){
   let r = Math.floor(Math.random() + pieces.length);
-  return new Piece(pieces[r][0], pieces[r][1])
+  return new piece(pieces[r][0], pieces[r][1])
 };
 
 let p = randomPiece();
