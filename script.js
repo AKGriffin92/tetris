@@ -67,7 +67,7 @@ function piece(tetromino, color){
 
   //starting position
   this.x = 3;
-  this.y = 0;
+  this.y = -2;
 };  
 
 //create fill function
