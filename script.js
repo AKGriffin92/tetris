@@ -163,7 +163,7 @@ piece.prototype.lock = function(){
         continue;
       };
       //lock on top gameover
-      if(this.y - r < 0){
+      if(this.y + r < 0){
         alert("Game Over");
         gameOver = true;
         break;
