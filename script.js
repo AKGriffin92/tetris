@@ -47,9 +47,14 @@ drawBoard();
     [o, "blue"]
   ];
 
-//initiate a piece the first piece in its first rotation
+//generate random tetromino
 
-let p = new piece(pieces[0][0], pieces[0][1])
+function randomPiece(){
+  let r = Math.floor(Math.random() * pieces.length);
+  return new piece(pieces[r][0], pieces[r][1])
+};
+
+let p = randomPiece();
 
 //create piece object
 
@@ -100,6 +105,8 @@ piece.prototype.moveDown = function (){
     secondTimer = 0;
   }else{
     //lock the piece and generate a new one
+    this.lock();
+    p = randomPiece();
   };
 };
 
@@ -126,7 +133,7 @@ piece.prototype.rotate = function(){
   let nextRotation = this.tetromino[(this.tetrominoRotation + 1)%this.tetromino.length];
   let kick = 0;
   
-  if(this.collision(0, 0, nextPatern)){
+  if(this.collision(0, 0, nextRotation)){
     //checks to see if collision is right or left wall
     if(this.x > col/2){
       //it's the right wall
@@ -144,6 +151,48 @@ piece.prototype.rotate = function(){
     this.activeTetromino = this.tetromino[this.tetrominoRotation];
     this.draw()
   };
+};
+
+// lock the piece
+
+piece.prototype.lock = function(){
+  for(r = 0; r < this.activeTetromino.length; r++){
+    for(c = 0; c < this.activeTetromino.length; c++){
+      // skip vacant square
+      if(!this.activeTetromino[r][c]){
+        continue;
+      };
+      //lock on top gameover
+      if(this.y + r < 0){
+        alert("Game Over");
+        gameOver = true;
+        break;
+      };
+      // we lock the piece
+      board[this.y + r][this.x + c] = this.color;
+    };
+  };
+  // remove full rows
+  for(r = 0; r < row; r++){
+    let isRowFull = true;
+    for(c = 0; c < col; c++){
+      isRowFull = isRowFull && (board[r][c] != vacant);
+    };
+    if(isRowFull){
+      // if row is full
+      // move down all rows above it
+      for(y = r; y > 1; y--){
+        for(c = 0; c < col; c++){
+          board[y][c] = board[y-1][c]
+        };
+        //the top row has no row above it
+        for(c = 0; c < col; c++){
+          board[0][c] = vacant;
+        };
+      };
+    };
+  };
+  drawBoard();
 };
 
 // collision function
@@ -205,6 +254,7 @@ function control(event){
 //drop the piece down every 1 second
 
 let dropStart = Date.now();
+let gameOver = false;
 function drop(){
   let press;
   let now = Date.now();
@@ -213,7 +263,9 @@ function drop(){
     p.moveDown();
     dropStart = Date.now();
   };
-  requestAnimationFrame(drop)
+  if(!gameOver){
+    requestAnimationFrame(drop)  
+  };
 };
 
 let secondTimer;
