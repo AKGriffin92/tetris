@@ -39,12 +39,12 @@ drawBoard();
 
   const pieces = [
     [z, "orange"],
-    [s, "skyblue"],
-    [t, "green"],
-    [l, "yellow"],
+    [s, "deeppink"],
+    [t, "chartreuse"],
+    [l, "gold"],
     [j, "blue"],
-    [i, "vermilion"],
-    [o, "purple"]
+    [i, "cyan"],
+    [o, "blueviolet"]
   ];
 
 //generate random tetromino
