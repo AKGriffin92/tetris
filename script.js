@@ -105,6 +105,7 @@ piece.prototype.moveDown = function (){
     secondTimer = 0;
   }else{
     //lock the piece and generate a new one
+    this.lock();
     p = randomPiece();
   };
 };
@@ -149,6 +150,27 @@ piece.prototype.rotate = function(){
     this.tetrominoRotation = (this.tetrominoRotation + 1) % this.tetromino.length;
     this.activeTetromino = this.tetromino[this.tetrominoRotation];
     this.draw()
+  };
+};
+
+// lock the piece
+
+piece.prototype.lock = function(){
+  for(r = 0; r < this.activeTetromino.length; r++){
+    for(c = 0; c < this.activeTetromino.length; c++){
+      // skip vacant square
+      if(!this.activeTetromino[r][c]){
+        continue;
+      };
+      //lock on top gameover
+      if(this.y - r < 0){
+        alert("Game Over");
+        gameOver = true;
+        break;
+      };
+      // we lock the piece
+      board[this.y + r][this.x + c] = this.color;
+    };
   };
 };
 
@@ -211,6 +233,7 @@ function control(event){
 //drop the piece down every 1 second
 
 let dropStart = Date.now();
+let gameOver = false;
 function drop(){
   let press;
   let now = Date.now();
@@ -219,7 +242,9 @@ function drop(){
     p.moveDown();
     dropStart = Date.now();
   };
-  requestAnimationFrame(drop)
+  if(!gameOver){
+    requestAnimationFrame(drop)  
+  };
 };
 
 let secondTimer;
