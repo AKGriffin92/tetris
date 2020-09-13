@@ -172,6 +172,26 @@ piece.prototype.lock = function(){
       board[this.y + r][this.x + c] = this.color;
     };
   };
+  // remove full rows
+  for(r = 0; r < row; r++){
+    let isRowFull = true;
+    for(c = 0; c < col; c++){
+      isRowFull = isRowFull && (board[r][c] != vacant);
+    };
+    if(isRowFull){
+      // if row is full
+      // move down all rows above it
+      for(y = r; y > 1; y--){
+        for(c = 0; c < col; c++){
+          board[y][c] = board[y-1][c]
+        };
+        //the top row has no row above it
+        for(c = 0; c < col; c++){
+          board[0][c] = vacant;
+        };
+      };
+    };
+  };
 };
 
 // collision function
