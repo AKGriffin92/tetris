@@ -277,5 +277,9 @@ piece.prototype.resetTimer = function(){
 
 };
 
+focusCanvas = function getFocus() {           
+  document.getElementById("game").focus();
+};
+
 p.draw();
 drop();
