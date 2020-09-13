@@ -278,7 +278,7 @@ piece.prototype.resetTimer = function(){
 };
 
 focusCanvas = function getFocus() {           
-  document.getElementById("game").focus(preventScroll:true);
+  document.getElementById("game").focus({preventScroll:true});
 };
 
 p.draw();
