@@ -41,7 +41,7 @@ drawBoard();
     [z, "orangered"],
     [s, "gold"],
     [t, "chartreuse"],
-    [l, "deeppink"],
+    [l, "hotpink"],
     [j, "royalblue"],
     [i, "cyan"],
     [o, "violet"]
