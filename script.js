@@ -44,7 +44,7 @@ drawBoard();
     [l, "deeppink"],
     [j, "royalblue"],
     [i, "cyan"],
-    [o, "blueviolet"]
+    [o, "plum"]
   ];
 
 //generate random tetromino
