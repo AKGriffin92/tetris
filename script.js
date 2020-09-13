@@ -38,11 +38,11 @@ drawBoard();
   //the pieces and their colors
 
   const pieces = [
-    [z, "orange"],
+    [z, "orangered"],
     [s, "deeppink"],
     [t, "chartreuse"],
     [l, "gold"],
-    [j, "blue"],
+    [j, "royalblue"],
     [i, "cyan"],
     [o, "blueviolet"]
   ];
