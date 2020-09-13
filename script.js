@@ -105,6 +105,7 @@ piece.prototype.moveDown = function (){
     secondTimer = 0;
   }else{
     //lock the piece and generate a new one
+    p = randomPiece();
   };
 };
 
