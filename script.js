@@ -192,6 +192,7 @@ piece.prototype.lock = function(){
       };
     };
   };
+  drawBoard();
 };
 
 // collision function
