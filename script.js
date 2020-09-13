@@ -39,9 +39,9 @@ drawBoard();
 
   const pieces = [
     [z, "orangered"],
-    [s, "deeppink"],
+    [s, "gold"],
     [t, "chartreuse"],
-    [l, "gold"],
+    [l, "deeppink"],
     [j, "royalblue"],
     [i, "cyan"],
     [o, "blueviolet"]
