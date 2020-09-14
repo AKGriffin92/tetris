@@ -14,11 +14,13 @@ const centerY = height / 2 - row * sq / 2;
 //draw a square
 function drawSquare(x, y, color) {
   
+  let newX = x * sq + center
+  let newY = y * sq + centerY
   ctx.fillStyle = color;
-  ctx.fillRect(x*sq,y*sq,sq,sq);
+  ctx.fillRect(newX, newY, sq, sq);
 
   ctx.strokeStyle = "BLACK";
-  ctx.strokeRect(x * sq + centerX, y * sq + centerY, sq,sq,sq)
+  ctx.strokeRect(newX, newY, sq,sq,sq)
 }
 
 //create game board
