@@ -19,8 +19,8 @@ function drawSquare(x, y, color) {
   
   // checks to see if square is above the board
   // only draws if below top of board
-  
-  if(newY <= height/2 + sq * row /2){
+ 
+  if(newY >= height/2 - sq * row /2){
     
     ctx.fillStyle = color;
     ctx.fillRect(newX, newY, sq, sq);
