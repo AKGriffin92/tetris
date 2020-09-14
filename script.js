@@ -14,7 +14,7 @@ const centerY = height / 2 - row * sq / 2;
 //draw a square
 function drawSquare(x, y, color) {
   
-  let newX = x * sq + center
+  let newX = x * sq + centerX
   let newY = y * sq + centerY
   ctx.fillStyle = color;
   ctx.fillRect(newX, newY, sq, sq);
