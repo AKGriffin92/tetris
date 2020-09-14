@@ -6,14 +6,30 @@ const row = 20;
 const col = 10;
 const vacant = "white";
 
+const height = document.getElementById('game').height;
+const width = document.getElementById('game').width;
+const centerX = width / 2 - col * sq / 2;
+const centerY = height / 2 - row * sq / 2;
+
 //draw a square
 function drawSquare(x, y, color) {
-  ctx.fillStyle = color;
-  ctx.fillRect(x*sq,y*sq,sq,sq);
+  
+  let newX = x * sq + centerX
+  let newY = y * sq + centerY
+  
+  // checks to see if square is above the board
+  // only draws if below top of board
+ 
+  if(newY >= height/2 - sq * row /2){
+    
+    ctx.fillStyle = color;
+    ctx.fillRect(newX, newY, sq, sq);
 
-  ctx.strokeStyle = "BLACK";
-  ctx.strokeRect(x*sq,y*sq,sq,sq)
-}
+    ctx.strokeStyle = "BLACK";
+    ctx.strokeRect(newX, newY, sq,sq,sq)
+    
+  };
+};
 
 //create game board
 let board = [];
@@ -66,7 +82,7 @@ function piece(tetromino, color){
   this.activeTetromino = this.tetromino[this.tetrominoRotation]
   
   // starting point
-  this.x = this.activeTetromino.length > 2 ? 3 : 4;
+  this.x = (this.activeTetromino.length > 2 ? 3 : 4);
   this.y = -(this.activeTetromino.length);
 };  
 

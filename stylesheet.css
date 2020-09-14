@@ -5,6 +5,8 @@
 }
 
 canvas {
-  tabindex: 1;
+  outline: black solid 3px;
+    margin: auto;
+    display: block;
 }
 
