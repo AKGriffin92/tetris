@@ -67,17 +67,17 @@ function display(column, x, y, r, c, color){
 };
 
 // draw display
-function drawDisplay(element){
-  let newX = (element.x * sq + centerX) * (element.column - 1);
-  let newY =  element.y * sq + centerY
+display.prototype.draw(){
+  let newX = (this.x * sq + centerX) * (this.column - 1);
+  let newY =  this.y * sq + centerY
     
-  ctx.fillStyle = element.color;
-  ctx.fillRect(newX, newY, element.r*sq, element.c*sq);
+  ctx.fillStyle = this.color;
+  ctx.fillRect(newX, newY, this.r*sq, this.c*sq);
 };
 
-let nextDisplay = new display(3, 0, 0, 5, "red");
+let nextDisplay = new display(3, 0, 0, 5, 5, "red");
 
-drawDisplay(nextDisplay);
+nextDisplay.draw();
 
   //the pieces and their colors
 
