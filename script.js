@@ -56,13 +56,13 @@ drawBoard();
 
 // create a new ui element
 
-function display(column, x, y, w, h, color){
+function display(column, x, y, w, h){
   this.column = column;
   this.x = x;
   this.y = y;
   this.w = w;
   this.h = h;
-  this.color = color;
+  this.color = rgba(0, 0, 0, 0.5);
 
 };
 
@@ -75,10 +75,10 @@ display.prototype.draw =  function(){
   ctx.fillRect(newX, newY, this.w*sq, this.h*sq);
 };
 
-let nextDisplay = new display(3, 0, 0, 5, 5, "green");
-let rowDisplay = new display(3, 0, 6, 5, 3, "green");
-let levelDisplay = new display(3, 0, 10, 5, 3, "green");
-let scoreDisplay = new display(3, 0, 14, 5, 3, "green");
+let nextDisplay = new display(3, 0, 0, 5, 5);
+let rowDisplay = new display(3, 0, 6, 5, 3);
+let levelDisplay = new display(3, 0, 10, 5, 3);
+let scoreDisplay = new display(3, 0, 14, 5, 3);
 
 nextDisplay.draw();
 rowDisplay.draw();
