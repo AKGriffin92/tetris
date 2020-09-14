@@ -57,7 +57,7 @@ drawBoard();
 // draw display
 function drawDisplay(column, x, y, factor, color){
   let newX = (x * sq + centerX) * (column - 1);
-  let newY =  sq + centerY
+  let newY =  y * sq + centerY
     
   ctx.fillStyle = color;
   ctx.fillRect(newX, newY, factor*sq, factor*sq);
