@@ -76,10 +76,10 @@ display.prototype.draw =  function(){
 };
 
 let nextDisplay = new display(3, 0, 0, 5, 5, "red");
-let scoreDisplay = new display(3, 0, 0, 5, 3, "green");
+let scoreDisplay = new display(3, 2, 0, 5, 3, "green");
 
 scoreDisplay.draw();
-//nextDisplay.draw();
+nextDisplay.draw();
 
   //the pieces and their colors
 
