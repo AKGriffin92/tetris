@@ -72,8 +72,8 @@ function piece(tetromino, color){
   this.activeTetromino = this.tetromino[this.tetrominoRotation]
   
   // starting point
-  this.x = (this.activeTetromino.length > 2 ? 3 : 4) + centerX ;
-  this.y = -(this.activeTetromino.length) + centerY;
+  this.x = (this.activeTetromino.length > 2 ? 3 : 4);
+  this.y = -(this.activeTetromino.length);
 };  
 
 //create fill function
