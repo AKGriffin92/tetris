@@ -75,13 +75,15 @@ display.prototype.draw =  function(){
   ctx.fillRect(newX, newY, this.w*sq, this.h*sq);
 };
 
-let nextDisplay = new display(3, 0, 0, 5, 5, "red");
-let scoreDisplay = new display(3, 0, 6, 5, 3, "green");
-let rowDisplay = new display(3, 0, 10, 5, 3, "blue");
+let nextDisplay = new display(3, 0, 0, 5, 5, "green");
+let rowDisplay = new display(3, 0, 6, 5, 3, "green");
+let levelDisplay = new display(3, 0, 10, 5, 3, "green");
+let scoreDisplay = new display(3, 0, 10, 5, 3, "green");
 
-scoreDisplay.draw();
 nextDisplay.draw();
 rowDisplay.draw();
+levelDisplay.draw();
+scoreDisplay.draw();
 
   //the pieces and their colors
 
