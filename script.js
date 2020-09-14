@@ -81,6 +81,7 @@ let rowDisplay = new display(3, 0, 10, 5, 3, "blue");
 
 scoreDisplay.draw();
 nextDisplay.draw();
+rowDisplay.draw();
 
   //the pieces and their colors
 
