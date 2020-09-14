@@ -54,16 +54,30 @@ function drawBoard(){
 
 drawBoard();
 
-// draw display
-function drawDisplay(column, x, y, factor, color){
-  let newX = (x * sq + centerX) * (column - 1);
-  let newY =  y * sq + centerY
-    
-  ctx.fillStyle = color;
-  ctx.fillRect(newX, newY, factor*sq, factor*sq);
+// create a new ui element
+
+function display(column, x, y, r, c, color){
+  this.column = column;
+  this.x = x;
+  this.y = y;
+  this.r = r;
+  this.c = c;
+  this.color = color;
+
 };
 
-drawDisplay(3, 0, 0, 5, "red");
+// draw display
+function drawDisplay(element){
+  let newX = (element.x * sq + centerX) * (element.column - 1);
+  let newY =  element.y * sq + centerY
+    
+  ctx.fillStyle = element.color;
+  ctx.fillRect(newX, newY, element.r*sq, element.c*sq);
+};
+
+let nextDisplay = new display(3, 0, 0, 5, "red");
+
+drawDisplay(nextDisplay);
 
   //the pieces and their colors
 
