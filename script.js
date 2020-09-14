@@ -67,7 +67,7 @@ function display(column, x, y, r, c, color){
 };
 
 // draw display
-display.prototype.draw = {
+display.prototype.draw =  function(){
   let newX = (this.x * sq + centerX) * (this.column - 1);
   let newY =  this.y * sq + centerY
     
