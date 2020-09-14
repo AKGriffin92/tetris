@@ -19,16 +19,11 @@ function drawSquare(x, y, color) {
   
   // checks to see if square is above the board
   // only draws if below top of board
- 
-  if(newY >= height/2 - sq * row /2){
-    
-    ctx.fillStyle = color;
-    ctx.fillRect(newX, newY, sq, sq);
+  ctx.fillStyle = color;
+  ctx.fillRect(newX, newY, sq, sq);
 
-    ctx.strokeStyle = "BLACK";
-    ctx.strokeRect(newX, newY, sq,sq,sq)
-    
-  };
+  ctx.strokeStyle = "BLACK";
+  ctx.strokeRect(newX, newY, sq,sq,sq)
 };
 
 //create game board
@@ -82,8 +77,8 @@ function piece(tetromino, color){
   this.activeTetromino = this.tetromino[this.tetrominoRotation]
   
   // starting point
-  this.x = (this.activeTetromino.length > 2 ? 3 : 4);
-  this.y = -(this.activeTetromino.length);
+  this.x = 3;
+  this.y = -2;
 };  
 
 //create fill function
