@@ -62,7 +62,7 @@ function display(column, x, y, w, h){
   this.y = y;
   this.w = w;
   this.h = h;
-  this.color = rgba(0, 0, 0, 0.5);
+  this.color = "rgba(0, 0, 0, 0.5)";
 
 };
 
