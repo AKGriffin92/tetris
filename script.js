@@ -1,15 +1,18 @@
 const cvs = document.getElementById("game");
 const ctx = cvs.getContext("2d");
 
-const sq = 20;
+const height = cvs.height;
+const width = cvs.width;
+
 const row = 20;
 const col = 10;
+const sq = height / (row + 2);
 const vacant = "white";
 
-const height = document.getElementById('game').height;
-const width = document.getElementById('game').width;
+
 const centerX = width / 2 - col * sq / 2;
 const centerY = height / 2 - row * sq / 2;
+
 
 //draw a square
 function drawSquare(x, y, color) {
@@ -19,11 +22,16 @@ function drawSquare(x, y, color) {
   
   // checks to see if square is above the board
   // only draws if below top of board
-  ctx.fillStyle = color;
-  ctx.fillRect(newX, newY, sq, sq);
+ 
+  if(newY >= height/2 - sq * row /2){
+    
+    ctx.fillStyle = color;
+    ctx.fillRect(newX, newY, sq, sq);
 
-  ctx.strokeStyle = "BLACK";
-  ctx.strokeRect(newX, newY, sq,sq,sq)
+    ctx.strokeStyle = "BLACK";
+    ctx.strokeRect(newX, newY, sq,sq,sq)
+    
+  };
 };
 
 //create game board
@@ -45,6 +53,34 @@ function drawBoard(){
 };
 
 drawBoard();
+
+// create a new ui element
+
+function display(column, x, y, w, h, color){
+  this.column = column;
+  this.x = x;
+  this.y = y;
+  this.w = w;
+  this.h = h;
+  this.color = color;
+
+};
+
+// draw display
+display.prototype.draw =  function(){
+  let newX = (this.x * sq + centerX) * (this.column - 1);
+  let newY =  this.y * sq + centerY
+    
+  ctx.fillStyle = this.color;
+  ctx.fillRect(newX, newY, this.w*sq, this.h*sq);
+};
+
+let nextDisplay = new display(3, 0, 0, 5, 5, "red");
+let scoreDisplay = new display(3, 0, 6, 5, 3, "green");
+let rowDisplay = new display(3, 0, 10, 5, 3, "blue");
+
+scoreDisplay.draw();
+nextDisplay.draw();
 
   //the pieces and their colors
 
@@ -77,8 +113,8 @@ function piece(tetromino, color){
   this.activeTetromino = this.tetromino[this.tetrominoRotation]
   
   // starting point
-  this.x = 3;
-  this.y = -2;
+  this.x = (this.activeTetromino.length > 2 ? 3 : 4);
+  this.y = -(this.activeTetromino.length);
 };  
 
 //create fill function
