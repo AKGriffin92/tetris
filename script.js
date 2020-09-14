@@ -6,12 +6,13 @@ const row = 20;
 const col = 10;
 const vacant = "white";
 
+const height = document.getElementById('game').height;
+const width = document.getElementById('game').width;
+const centerX = width / 2 - col * sq / 2;
+const centerY = height / 2 - row * sq / 2;
+
 //draw a square
 function drawSquare(x, y, color) {
-  let height = document.getElementById('game').height;
-  let width = document.getElementById('game').width;
-  let centerX = width / 2 - col * sq / 2;
-  let centerY = height / 2 - row * sq / 2;
   
   ctx.fillStyle = color;
   ctx.fillRect(x*sq,y*sq,sq,sq);
@@ -71,8 +72,8 @@ function piece(tetromino, color){
   this.activeTetromino = this.tetromino[this.tetrominoRotation]
   
   // starting point
-  this.x = this.activeTetromino.length > 2 ? 3 : 4;
-  this.y = -(this.activeTetromino.length);
+  this.x = (this.activeTetromino.length > 2 ? 3 : 4) + centerX ;
+  this.y = -(this.activeTetromino.length) + centerY;
 };  
 
 //create fill function
