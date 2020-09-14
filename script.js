@@ -77,6 +77,7 @@ display.prototype.draw =  function(){
 
 let nextDisplay = new display(3, 0, 0, 5, 5, "red");
 let scoreDisplay = new display(3, 0, 6, 5, 3, "green");
+let rowDisplay = new display(3, 0, 10, 5, 3, "blue");
 
 scoreDisplay.draw();
 nextDisplay.draw();
