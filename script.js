@@ -56,12 +56,12 @@ drawBoard();
 
 // create a new ui element
 
-function display(column, x, y, r, c, color){
+function display(column, x, y, w, h, color){
   this.column = column;
   this.x = x;
   this.y = y;
-  this.r = r;
-  this.c = c;
+  this.w = w;
+  this.h = h;
   this.color = color;
 
 };
@@ -72,11 +72,11 @@ display.prototype.draw =  function(){
   let newY =  this.y * sq + centerY
     
   ctx.fillStyle = this.color;
-  ctx.fillRect(newX, newY, this.r*sq, this.c*sq);
+  ctx.fillRect(newX, newY, this.w*sq, this.h*sq);
 };
 
 let nextDisplay = new display(3, 0, 0, 5, 5, "red");
-let scoreDisplay = new display(3, 0, sq, 3, 5, "green");
+let scoreDisplay = new display(3, 0, sq, 5, 3, "green");
 
 scoreDisplay.draw();
 //nextDisplay.draw();
