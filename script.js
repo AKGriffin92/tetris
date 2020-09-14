@@ -8,11 +8,14 @@ const vacant = "white";
 
 //draw a square
 function drawSquare(x, y, color) {
+  let height = document.getElementById('game').height
+  let width = document.getElementById('game').width
+  
   ctx.fillStyle = color;
   ctx.fillRect(x*sq,y*sq,sq,sq);
 
   ctx.strokeStyle = "BLACK";
-  ctx.strokeRect(x*sq,y*sq,sq,sq)
+  ctx.strokeRect(x * sq + width / 2, y * + height / 2, sq,sq,sq)
 }
 
 //create game board
