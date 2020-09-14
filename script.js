@@ -1,15 +1,15 @@
 const cvs = document.getElementById("game");
 const ctx = cvs.getContext("2d");
 
-const sq = 20;
+const height = cvs.height;
+const width = cvs.width;
+const centerX = width / 2 - col * sq / 2;
+const centerY = height / 2 - row * sq / 2;
+
+const sq = width / 3 / col;
 const row = 20;
 const col = 10;
 const vacant = "white";
-
-const height = document.getElementById('game').height;
-const width = document.getElementById('game').width;
-const centerX = width / 2 - col * sq / 2;
-const centerY = height / 2 - row * sq / 2;
 
 //draw a square
 function drawSquare(x, y, color) {
