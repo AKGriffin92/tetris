@@ -5,6 +5,9 @@
 }
 
 canvas {
-  outline: black solid 3px;  
+  outline: black solid 3px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
