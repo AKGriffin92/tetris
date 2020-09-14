@@ -41,10 +41,10 @@ drawBoard();
     [z, "orangered"],
     [s, "gold"],
     [t, "chartreuse"],
-    [l, "deeppink"],
+    [l, "hotpink"],
     [j, "royalblue"],
     [i, "cyan"],
-    [o, "blueviolet"]
+    [o, "darkviolet"]
   ];
 
 //generate random tetromino
@@ -64,10 +64,10 @@ function piece(tetromino, color){
   this.color = color;
   this.tetrominoRotation = 0;
   this.activeTetromino = this.tetromino[this.tetrominoRotation]
-
-  //starting position
-  this.x = 3;
-  this.y = 0;
+  
+  // starting point
+  this.x = this.activeTetromino.length > 2 ? 3 : 4;
+  this.y = -(this.activeTetromino.length);
 };  
 
 //create fill function
@@ -275,6 +275,10 @@ piece.prototype.resetTimer = function(){
     secondTimer = 1;
   };
 
+};
+
+focusCanvas = function getFocus() {           
+  document.getElementById("game").focus({preventScroll:true});
 };
 
 p.draw();
