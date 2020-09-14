@@ -6,9 +6,9 @@ const width = cvs.width;
 const centerX = width / 2 - col * sq / 2;
 const centerY = height / 2 - row * sq / 2;
 
-const sq = width / 3 / col;
 const row = 20;
 const col = 10;
+const sq = (height - 20) / row;
 const vacant = "white";
 
 //draw a square
