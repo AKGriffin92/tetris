@@ -64,10 +64,10 @@ function piece(tetromino, color){
   this.color = color;
   this.tetrominoRotation = 0;
   this.activeTetromino = this.tetromino[this.tetrominoRotation]
-
-  //starting position
-  this.x = 3;
-  this.y = -2;
+  
+  // starting point
+  this.x = this.activeTetromino.length === 3 ? 3 : 4;
+  this.y = -(this.activeTetromino.length);
 };  
 
 //create fill function
