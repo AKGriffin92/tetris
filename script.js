@@ -3,13 +3,16 @@ const ctx = cvs.getContext("2d");
 
 const height = cvs.height;
 const width = cvs.width;
-const centerX = width / 2 - col * sq / 2;
-const centerY = height / 2 - row * sq / 2;
 
 const row = 20;
 const col = 10;
-const sq = (height - 20) / row;
+const sq = height / (row + 2);
 const vacant = "white";
+
+
+const centerX = width / 2 - col * sq / 2;
+const centerY = height / 2 - row * sq / 2;
+
 
 //draw a square
 function drawSquare(x, y, color) {
