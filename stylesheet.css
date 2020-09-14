@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+container {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+}
+
 canvas {
   outline: black solid 3px;
     margin: auto;
