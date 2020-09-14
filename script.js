@@ -63,7 +63,7 @@ function drawDisplay(column, x, y, factor, color){
   ctx.fillRect(newX, newY, factor*sq, factor*sq);
 };
 
-drawDisplay(3, 0, 0, 5, red);
+drawDisplay(3, 0, 0, 5, "red");
 
   //the pieces and their colors
 
