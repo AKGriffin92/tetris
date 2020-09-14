@@ -79,7 +79,7 @@ let nextDisplay = new display(3, 0, 0, 5, 5, "red");
 let scoreDisplay = new display(3, 0, sq, 3, 5, "green");
 
 scoreDisplay.draw();
-nextDisplay.draw();
+//nextDisplay.draw();
 
   //the pieces and their colors
 
