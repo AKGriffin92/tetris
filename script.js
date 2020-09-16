@@ -267,7 +267,7 @@ piece.prototype.lock = function(){
       };
       
       // increment row count
-      rows++;
+      rowCount++;
       
       // display next piece
       
