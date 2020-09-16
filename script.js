@@ -161,9 +161,9 @@ display.prototype.drawNext = function(next){
     for(r = 0; r < next.tetromino.length; r++){
       for(c = 0; c < next.tetromino.length; c++){
         drawSquare(this.newX + c, this.newY + r, next.color);
-        consol.log(this.newX);
-        consol.log(this.newY);
-        consol.log(next.color);
+        console.log(this.newX);
+        console.log(this.newY);
+        console.log(next.color);
       };
     };  
   };
