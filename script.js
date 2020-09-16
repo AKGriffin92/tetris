@@ -80,7 +80,7 @@ display.prototype.draw =  function(){
   ctx.strokeRect(this.x, this.y, this.w*sq, this.h*sq)
   
   if(this.text){    
-    ctx.font = "normal normal 16px sans-serif";
+    ctx.font = "bold 16px sans-serif";
     ctx.fillStyle = "black";
     ctx.fillText(this.text, this.x + sq, this.y + sq);  
   };
