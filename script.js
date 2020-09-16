@@ -159,7 +159,6 @@ display.prototype.drawNext = function(nextPiece){
       };
     };
   }; 
-  next = randomPiece();
 };
 
 
@@ -174,7 +173,8 @@ piece.prototype.moveDown = function (){
     
     //lock the piece and generate a new one
     this.lock();
-    p = randomPiece();
+    p = next;
+    next = randomPiece;
   };
 };
 
@@ -330,7 +330,6 @@ function control(event){
 let dropStart = Date.now();
 let gameOver = false;
 function drop(){
-  let press;
   let now = Date.now();
   let delta = now - dropStart;
   if (delta > 1000){
