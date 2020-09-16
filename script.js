@@ -163,7 +163,7 @@ display.prototype.drawNext = function(nextPiece){
 piece.prototype.moveDown = function (){
   if(!this.collision(0,1, this.activeTetromino)){
     this.undraw();
-    this.y += 10;
+    this.y++;
     this.draw();
     secondTimer = 0;
   }else{
