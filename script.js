@@ -21,15 +21,15 @@ const centerY = height / 2 - row * sq / 2;
 
 //draw a square
 function drawSquare(x, y, color) {
+  
+  let sqX = sq * x;
+  let sqY = sqY;
 
   ctx.fillStyle = color;
-  ctx.fillRect(x, y, sq, sq);
+  ctx.fillRect(sqX, sqY, sq, sq);
 
   ctx.strokeStyle = "BLACK";
-  ctx.strokeRect(x, y, sq,sq)
-  
-  //let newX = x * sq + centerX
-  //let newY = y * sq + centerY
+  ctx.strokeRect(sqX, sqY, sq,sq)
   
   // checks to see if square is above the board
   // only draws if below top of board
