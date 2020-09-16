@@ -152,10 +152,10 @@ piece.prototype.undraw = function() {
 
 // display next piece
 display.prototype.drawNext = function(next){
-  console.log(next.length);
-  if(next.length > 2){
-    for(r = 0; r < next.length; r++){
-      for(c = 0; c < next.length; c++){
+  console.log(next.tetromino.length);
+  if(next.tetromino.length > 2){
+    for(r = 0; r < next.tetromino.length; r++){
+      for(c = 0; c < next.tetromino.length; c++){
         drawsquare(this.newX + c, this.newY + r, next.color);
       };
     };  
