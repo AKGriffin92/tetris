@@ -174,7 +174,7 @@ piece.prototype.moveDown = function (){
     //lock the piece and generate a new one
     this.lock();
     p = next;
-    next = randomPiece;
+    next = randomPiece();
   };
 };
 
@@ -261,8 +261,6 @@ piece.prototype.lock = function(){
       
       // increment row count
       rowCount++;
-      
-      // display next piece
       
     };
   };
