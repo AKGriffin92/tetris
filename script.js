@@ -156,7 +156,7 @@ display.prototype.drawNext = function(next){
   if(next.tetromino.length > 2){
     for(r = 0; r < next.tetromino.length; r++){
       for(c = 0; c < next.tetromino.length; c++){
-        drawsquare(this.newX + c, this.newY + r, next.color);
+        drawSquare(this.newX + c, this.newY + r, next.color);
       };
     };  
   };
