@@ -50,8 +50,10 @@ for(r=0; r < row; r++){
 //draw game board
 function drawBoard(){
   for(r = 0; r < row; r++){
-    for(c = 0; c < col; c++){
-      drawSquare(c, r, board[r][c]);
+    for(c = 0; c < col; c++){ 
+      let newX = c * sq //+ centerX
+      let newY = r * sq //+ centerY
+      drawSquare(newX, newY, board[r][c]);
     };
   };
 };
