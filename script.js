@@ -57,7 +57,7 @@ function drawBoard(){
 
 drawBoard();
 
-// create a new ui element
+// create a new display
 
 function display(column, x, y, w, h){
   this.column = column;
@@ -80,7 +80,7 @@ display.prototype.draw =  function(){
   ctx.strokeRect(this.x, this.y, this.w*sq, this.h*sq)
 };
 
-let nextDisplay = new display(3, 0, 0, 5, 5);
+let nextDisplay = new display(3, 0, 0, 5, 5.5);
 let rowDisplay = new display(3, 0, 6, 5, 3);
 let levelDisplay = new display(3, 0, 10, 5, 3);
 let scoreDisplay = new display(3, 0, 14, 5, 3);
