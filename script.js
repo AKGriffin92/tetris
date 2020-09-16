@@ -153,7 +153,7 @@ piece.prototype.undraw = function() {
 };
 
 // display next piece
-display.prototype.drawNext = function () {
+display.prototype.drawNext = function(){
   this.next = next;
   if(this.next.length > 2){
     for(r = 0; r < this.next.length; r++){
