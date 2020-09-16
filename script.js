@@ -76,25 +76,12 @@ display.prototype.draw =  function(){
 };
 
 //count rows
-let rows = 0
+let rowCount = 0
 
 let nextDisplay = new display(3, 0, 0, 5, 5);
 let rowDisplay = new display(3, 0, 6, 5, 3);
 let levelDisplay = new display(3, 0, 10, 5, 3);
 let scoreDisplay = new display(3, 0, 14, 5, 3);
-
-// display next piece
-display.prototype.drawNext = function () {
-  this.next = next;
-  if(this.next.length > 2){
-    for(r = 0; r < this.next.length; r++){
-      for(c = 0; c < this.next.length; c++){
-        drawsquare(this.newX + c, this.newY + r, this.next.color);
-      };
-    };  
-  };
-  next = randomPiece();
-};
 
 nextDisplay.draw();
 nextDisplay.drawNext();
@@ -163,6 +150,19 @@ piece.prototype.draw = function() {
 
 piece.prototype.undraw = function() {
   this.fill(vacant);
+};
+
+// display next piece
+display.prototype.drawNext = function () {
+  this.next = next;
+  if(this.next.length > 2){
+    for(r = 0; r < this.next.length; r++){
+      for(c = 0; c < this.next.length; c++){
+        drawsquare(this.newX + c, this.newY + r, this.next.color);
+      };
+    };  
+  };
+  next = randomPiece();
 };
 
 //move down the piece
