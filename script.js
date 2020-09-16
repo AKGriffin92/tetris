@@ -153,6 +153,7 @@ piece.prototype.undraw = function() {
 // display next piece
 display.prototype.drawNext = function(){
   this.next = next;
+  console.log(this.next.length);
   if(this.next.length > 2){
     for(r = 0; r < this.next.length; r++){
       for(c = 0; c < this.next.length; c++){
