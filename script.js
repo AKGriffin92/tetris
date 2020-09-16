@@ -62,14 +62,18 @@ function display(column, x, y, w, h){
   this.y = y;
   this.w = w;
   this.h = h;
+  
+  this.newX;
+  this.newY;
+  
   this.color = "rgba(0, 0, 0, 0.5)";
 
 };
 
 // draw display
 display.prototype.draw =  function(){
-  let newX = (this.x * sq + centerX) * (this.column - 1);
-  let newY =  this.y * sq + centerY
+  this.newX = (this.x * sq + centerX) * (this.column - 1);
+  this.newY =  this.y * sq + centerY
     
   ctx.fillStyle = this.color;
   ctx.fillRect(newX, newY, this.w*sq, this.h*sq);
