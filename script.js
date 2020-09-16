@@ -75,7 +75,7 @@ function display(column, x, y, w, h){
 // draw display
 display.prototype.draw =  function(){
   ctx.fillStyle = this.color;
-  ctx.fillRect(this.X, this.Y, this.w*sq, this.h*sq);
+  ctx.fillRect(this.x, this.y, this.w*sq, this.h*sq);
 };
 
 let nextDisplay = new display(3, 0, 0, 5, 5);
