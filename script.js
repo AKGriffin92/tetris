@@ -154,7 +154,7 @@ display.prototype.drawNext = function(nextPiece){
     for(c = 0; c < nextPiece.tetromino.length; c++){
       let newX = (this.x + c) * sq //+ centerX
       let newY = (this.y + r) * sq //+ centerY
-      drawSquare(newX, newY, color);
+      drawSquare(newX, newY, nextPiece.color);
     };
   }; 
   next = randomPiece();
