@@ -159,9 +159,12 @@ display.prototype.drawNext = function(nextPiece){
   for(r = 0; r < length; r++){
     for(c = 0; c < length; c++){
       if(nextPiece.activeTetromino[r][c]){
-        border = length < 3 ? 1.5 * sq : length < 4 ? sq : .5 * sq;
-        let newX = (c * sq) + this.x + border;
-        let newY = (r * sq) + this.y + border;
+        paddingY = length < 3 ? 2 * sq : length < 4 ? sq : .5 *sq;
+        paddingX = length < 3 ? 1.5 * sq : paddingY;
+        
+        let newX = (c * sq) + this.x + paddingX;
+        let newY = (r * sq) + this.y + paddingY;
+        
         drawSquare(newX, newY, nextPiece.color);      
       };
     };
