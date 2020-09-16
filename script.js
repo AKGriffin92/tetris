@@ -76,7 +76,7 @@ display.prototype.draw =  function(){
   this.newY =  this.y * sq + centerY
     
   ctx.fillStyle = this.color;
-  ctx.fillRect(newX, newY, this.w*sq, this.h*sq);
+  ctx.fillRect(this.newX, this.newY, this.w*sq, this.h*sq);
 };
 
 //count rows
