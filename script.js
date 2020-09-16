@@ -84,8 +84,6 @@ let levelDisplay = new display(3, 0, 10, 5, 3);
 let scoreDisplay = new display(3, 0, 14, 5, 3);
 
 nextDisplay.draw();
-nextDisplay.drawNext();
-
 rowDisplay.draw();
 levelDisplay.draw();
 scoreDisplay.draw();
@@ -164,6 +162,9 @@ display.prototype.drawNext = function(){
   };
   next = randomPiece();
 };
+
+nextDisplay.drawNext();
+
 
 //move down the piece
 piece.prototype.moveDown = function (){
