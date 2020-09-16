@@ -127,9 +127,11 @@ function piece(tetromino, color){
 piece.prototype.fill = function(color) {
   for(r = 0; r < this.activeTetromino.length; r++){
     for(c = 0; c < this.activeTetromino.length; c++){
-      let newX = (this.x + c) * sq //+ centerX
-      let newY = (this.y + r) * sq //+ centerY
-      drawSquare(newX, newY, color);  
+      if(this.activeTetromino[r][c]){
+        let newX = (this.x + c) * sq; //+ centerX
+        let newY = (this.y + r) * sq; //+ centerY
+        drawSquare(newX, newY, color);
+      };
     };
   };
 };
@@ -150,11 +152,9 @@ piece.prototype.undraw = function() {
 display.prototype.drawNext = function(nextPiece){
   for(r = 0; r < nextPiece.tetromino.length; r++){
     for(c = 0; c < nextPiece.tetromino.length; c++){
-      if(this.activeTetromino[r][c]){
-        let newX = (this.x + c) * sq //+ centerX
-        let newY = (this.y + r) * sq //+ centerY
-        drawSquare(newX, newY, color);
-      };
+      let newX = (this.x + c) * sq //+ centerX
+      let newY = (this.y + r) * sq //+ centerY
+      drawSquare(newX, newY, color);
     };
   }; 
   next = randomPiece();
