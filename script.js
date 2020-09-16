@@ -81,7 +81,7 @@ display.prototype.draw =  function(){
   
   if(this.text){    
     ctx.font = "normal normal 16px sans-serif";
-    ctx.fillStyle = black;
+    ctx.fillStyle = "black";
     ctx.fillText(this.text, this.x + sq, this.y + sq);  
   };
 };
