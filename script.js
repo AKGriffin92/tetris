@@ -80,7 +80,7 @@ display.prototype.draw =  function(){
   ctx.strokeRect(this.x, this.y, this.w*sq, this.h*sq)
   
   if(this.text){
-    ctx.fillText(this.text, x + .5*sq, y + .5*sq);  
+    ctx.fillText(this.text, this.x + .5*sq, this.y + .5*sq);  
   };
 };
 
