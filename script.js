@@ -9,6 +9,11 @@ const col = 10;
 const sq = height / (row + 2);
 const vacant = "white";
 
+let rowCount = 0;
+let level = 0;
+let score = 0;
+
+
 
 const centerX = width / 2 - col * sq / 2;
 const centerY = height / 2 - row * sq / 2;
@@ -58,13 +63,10 @@ drawBoard();
 
 function display(column, x, y, w, h){
   this.column = column;
-  this.x = x;
-  this.y = y;
+  this.x = (x * sq + centerX) * (column - 1);
+  this.y = y * sq + centerY
   this.w = w;
   this.h = h;
-  
-  this.newX;
-  this.newY;
   
   this.color = "rgba(0, 0, 0, 0.5)";
 
@@ -72,15 +74,9 @@ function display(column, x, y, w, h){
 
 // draw display
 display.prototype.draw =  function(){
-  this.newX = (this.x * sq + centerX) * (this.column - 1);
-  this.newY =  this.y * sq + centerY
-    
   ctx.fillStyle = this.color;
-  ctx.fillRect(this.newX, this.newY, this.w*sq, this.h*sq);
+  ctx.fillRect(this.X, this.Y, this.w*sq, this.h*sq);
 };
-
-//count rows
-let rowCount = 0
 
 let nextDisplay = new display(3, 0, 0, 5, 5);
 let rowDisplay = new display(3, 0, 6, 5, 3);
@@ -160,10 +156,7 @@ display.prototype.drawNext = function(next){
   if(next.tetromino.length > 2){
     for(r = 0; r < next.tetromino.length; r++){
       for(c = 0; c < next.tetromino.length; c++){
-        drawSquare(this.newX + c, this.newY + r, next.color);
-        console.log(this.newX);
-        console.log(this.newY);
-        console.log(next.color);
+        drawSquare(this.x + c, this.y + r, next.color);
       };
     };  
   };
