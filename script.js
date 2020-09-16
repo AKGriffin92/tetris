@@ -152,8 +152,8 @@ piece.prototype.undraw = function() {
 display.prototype.drawNext = function(nextPiece){
   for(r = 0; r < nextPiece.tetromino.length; r++){
     for(c = 0; c < nextPiece.tetromino.length; c++){
-      let newX = (this.x + c)
-      let newY = (this.y + r)
+      let newX = (c * sq) + this.x
+      let newY = (r * sq) + this.y
       drawSquare(newX, newY, nextPiece.color);
     };
   }; 
