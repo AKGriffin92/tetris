@@ -152,11 +152,13 @@ piece.prototype.undraw = function() {
 // display next piece
 display.prototype.drawNext = function(nextPiece){
   nextDisplay.draw();
-  for(r = 0; r < nextPiece.activeTetromino.length; r++){
-    for(c = 0; c < nextPiece.activeTetromino.length; c++){
+  let length = nextPiece.activeTetromino.length
+  for(r = 0; r < length; r++){
+    for(c = 0; c < length; c++){
       if(nextPiece.activeTetromino[r][c]){
-        let newX = (c * sq) + this.x
-        let newY = (r * sq) + this.y
+        border = length < 3 ? 1.5 * sq : length < 4 ? sq : .5 * sq;
+        let newX = (c * sq) + this.x + border;
+        let newY = (r * sq) + this.y + border;
         drawSquare(newX, newY, nextPiece.color);      
       };
     };
