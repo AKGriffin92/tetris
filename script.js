@@ -159,7 +159,7 @@ display.prototype.drawNext = function(nextPiece){
   for(r = 0; r < length; r++){
     for(c = 0; c < length; c++){
       if(nextPiece.activeTetromino[r][c]){
-        paddingY = length < 3 ? 2.5 * sq : length < 4 ? 1.5 sq : sq;
+        paddingY = length < 3 ? 2.5 * sq : length < 4 ? 1.5 * sq : sq;
         paddingX = length < 3 ? 1.5 * sq : paddingY;
         
         let newX = (c * sq) + this.x + paddingX;
