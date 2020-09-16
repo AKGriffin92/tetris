@@ -246,6 +246,7 @@ piece.prototype.lock = function(){
       
       // increment row count
       rows++;
+      console.log(rows);
     };
   };
   drawBoard();
