@@ -150,6 +150,7 @@ piece.prototype.undraw = function() {
 
 // display next piece
 display.prototype.drawNext = function(nextPiece){
+  nextDisplay.draw();
   for(r = 0; r < nextPiece.activeTetromino.length; r++){
     for(c = 0; c < nextPiece.activeTetromino.length; c++){
       if(nextPiece.activeTetromino[r][c]){
@@ -175,6 +176,7 @@ piece.prototype.moveDown = function (){
     this.lock();
     p = next;
     next = randomPiece();
+    nextDisplay.drawNext(next);
   };
 };
 
