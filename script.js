@@ -151,20 +151,19 @@ piece.prototype.undraw = function() {
 };
 
 // display next piece
-display.prototype.drawNext = function(){
-  this.next = next;
-  console.log(this.next.length);
-  if(this.next.length > 2){
-    for(r = 0; r < this.next.length; r++){
-      for(c = 0; c < this.next.length; c++){
-        drawsquare(this.newX + c, this.newY + r, this.next.color);
+display.prototype.drawNext = function(next){
+  console.log(next.length);
+  if(next.length > 2){
+    for(r = 0; r < next.length; r++){
+      for(c = 0; c < next.length; c++){
+        drawsquare(this.newX + c, this.newY + r, next.color);
       };
     };  
   };
   next = randomPiece();
 };
 
-nextDisplay.drawNext();
+nextDisplay.drawNext(next);
 
 
 //move down the piece
