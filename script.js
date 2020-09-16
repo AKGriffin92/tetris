@@ -151,15 +151,12 @@ piece.prototype.undraw = function() {
 };
 
 // display next piece
-display.prototype.drawNext = function(next){
-  console.log(next.tetromino.length);
-  if(next.tetromino.length > 2){
-    for(r = 0; r < next.tetromino.length; r++){
-      for(c = 0; c < next.tetromino.length; c++){
-        drawSquare(this.x + c, this.y + r, next.color);
-      };
-    };  
-  };
+display.prototype.drawNext = function(nextPiece){
+  for(r = 0; r < nextPiece.tetromino.length; r++){
+    for(c = 0; c < nextPiece.tetromino.length; c++){
+      drawSquare(this.x + c, this.y + r, nextPiece.color);
+    };
+  }; 
   next = randomPiece();
 };
 
