@@ -79,9 +79,10 @@ display.prototype.draw =  function(){
   ctx.strokeStyle = "BLACK";
   ctx.strokeRect(this.x, this.y, this.w*sq, this.h*sq)
   
-  if(this.text){
-    ctx.font = "normal normal 21px sans-serif";
-    ctx.fillText(this.text, this.x + .5*sq, this.y + .5*sq);  
+  if(this.text){    
+    ctx.font = "normal normal 16px sans-serif";
+    ctx.fillStyle = black;
+    ctx.fillText(this.text, this.x + sq, this.y + sq);  
   };
 };
 
