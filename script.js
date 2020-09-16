@@ -127,14 +127,12 @@ function piece(tetromino, color){
 piece.prototype.fill = function(color) {
   for(r = 0; r < this.activeTetromino.length; r++){
     for(c = 0; c < this.activeTetromino.length; c++){
-        let newX = (this.x + c) * sq //+ centerX
-        let newY = (this.y + r) * sq //+ centerY
-        drawSquare(newX, newY, color);
-      };
+      let newX = (this.x + c) * sq //+ centerX
+      let newY = (this.y + r) * sq //+ centerY
+      drawSquare(newX, newY, color);  
     };
   };
 };
-
 
 //draw a piece to the board
 
