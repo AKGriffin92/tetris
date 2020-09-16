@@ -129,7 +129,7 @@ piece.prototype.fill = function(color) {
     for(c = 0; c < this.activeTetromino.length; c++){
       //only draw occupied squares
       if(this.activeTetromino[r][c]){
-        drawSquare(this.x + c,this.y + r, color);
+        drawSquare((this.x + c) * sq,(this.y + r)*sq, color);
       };
     };
   };
@@ -163,7 +163,7 @@ display.prototype.drawNext = function(nextPiece){
 piece.prototype.moveDown = function (){
   if(!this.collision(0,1, this.activeTetromino)){
     this.undraw();
-    this.y++;
+    this.y += 10;
     this.draw();
     secondTimer = 0;
   }else{
