@@ -72,6 +72,7 @@ function display(column, x, y, w, h){
 
 // draw display
 display.prototype.draw =  function(){
+  ctx.clearRect(this.x, this.y, this.w*sq, this.h*sq);
   ctx.fillStyle = this.color;
   ctx.fillRect(this.x, this.y, this.w*sq, this.h*sq);
 };
