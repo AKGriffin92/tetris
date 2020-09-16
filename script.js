@@ -23,10 +23,10 @@ const centerY = height / 2 - row * sq / 2;
 function drawSquare(x, y, color) {
 
   ctx.fillStyle = color;
-  ctx.fillRect(newX, newY, sq, sq);
+  ctx.fillRect(x, y, sq, sq);
 
   ctx.strokeStyle = "BLACK";
-  ctx.strokeRect(newX, newY, sq,sq,sq)
+  ctx.strokeRect(x, y, sq,sq)
   
   //let newX = x * sq + centerX
   //let newY = y * sq + centerY
