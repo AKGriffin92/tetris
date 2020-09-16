@@ -37,7 +37,6 @@ function drawSquare(x, y, color) {
   //if(newY >= height/2 - sq * row /2){
     
   };
-};
 
 //create game board
 let board = [];
