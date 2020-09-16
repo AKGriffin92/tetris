@@ -74,7 +74,10 @@ function display(column, x, y, w, h){
 display.prototype.draw =  function(){
   ctx.clearRect(this.x, this.y, this.w*sq, this.h*sq);
   ctx.fillStyle = this.color;
-  ctx.fillRect(this.x, this.y, this.w*sq, this.h*sq);
+  ctx.fillRect(this.x, this.y, this.w*sq, this.h*sq);  
+
+  ctx.strokeStyle = "BLACK";
+  ctx.strokeRect(this.x, this.y, this.w*sq, this.h*sq)
 };
 
 let nextDisplay = new display(3, 0, 0, 5, 5);
