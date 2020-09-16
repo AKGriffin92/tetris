@@ -150,11 +150,13 @@ piece.prototype.undraw = function() {
 
 // display next piece
 display.prototype.drawNext = function(nextPiece){
-  for(r = 0; r < nextPiece.tetromino.length; r++){
-    for(c = 0; c < nextPiece.tetromino.length; c++){
-      let newX = (c * sq) + this.x
-      let newY = (r * sq) + this.y
-      drawSquare(newX, newY, nextPiece.color);
+  for(r = 0; r < nextPiece.activeTetromino.length; r++){
+    for(c = 0; c < nextPiece.activeTetromino.length; c++){
+      if(nextPiece.activeTetromino[r][c]){
+        let newX = (c * sq) + this.x
+        let newY = (r * sq) + this.y
+        drawSquare(newX, newY, nextPiece.color);      
+      };
     };
   }; 
   next = randomPiece();
