@@ -59,13 +59,13 @@ drawBoard();
 
 // create a new display
 
-function display(column, x, y, w, h){
+function display(column, x, y, w, h, text){
   this.column = column;
   this.x = (x * sq + centerX) * (column - 1);
   this.y = y * sq + centerY
   this.w = w;
   this.h = h;
-  
+  this.text = text  
   this.color = "rgba(0, 0, 0, 0.5)";
 
 };
@@ -78,12 +78,16 @@ display.prototype.draw =  function(){
 
   ctx.strokeStyle = "BLACK";
   ctx.strokeRect(this.x, this.y, this.w*sq, this.h*sq)
+  
+  if(this.text){
+    ctx.fillText(this.text, x + .5*sq, y + .5*sq);  
+  };
 };
 
-let nextDisplay = new display(3, 0, 0, 5, 5.5);
-let rowDisplay = new display(3, 0, 6, 5, 3);
-let levelDisplay = new display(3, 0, 10, 5, 3);
-let scoreDisplay = new display(3, 0, 14, 5, 3);
+let nextDisplay = new display(3, 0, 0, 5, 5.5, "NEXT");
+let rowDisplay = new display(3, 0, 6, 5, 3, "ROWS");
+let levelDisplay = new display(3, 0, 10, 5, 3, "LEVEL");
+let scoreDisplay = new display(3, 0, 14, 5, 3, "SCORE");
 
 nextDisplay.draw();
 rowDisplay.draw();
