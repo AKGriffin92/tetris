@@ -23,10 +23,10 @@ const centerY = height / 2 - row * sq / 2;
 function drawSquare(x, y, color) {
 
   ctx.fillStyle = color;
-  ctx.fillRect(sqX, sqY, sq, sq);
+  ctx.fillRect(x, y, sq, sq);
 
   ctx.strokeStyle = "BLACK";
-  ctx.strokeRect(sqX, sqY, sq,sq)
+  ctx.strokeRect(x, y, sq,sq)
   
   // checks to see if square is above the board
   // only draws if below top of board
