@@ -75,6 +75,9 @@ display.prototype.draw =  function(){
   ctx.fillRect(newX, newY, this.w*sq, this.h*sq);
 };
 
+//count rows
+let rows = 0
+
 let nextDisplay = new display(3, 0, 0, 5, 5);
 let rowDisplay = new display(3, 0, 6, 5, 3);
 let levelDisplay = new display(3, 0, 10, 5, 3);
@@ -240,6 +243,9 @@ piece.prototype.lock = function(){
           board[0][c] = vacant;
         };
       };
+      
+      // increment row count
+      rows++;
     };
   };
   drawBoard();
