@@ -83,7 +83,7 @@ display.prototype.draw =  function(){
     ctx.font = "bold 16px sans-serif";
     ctx.textBaseline = "top";
     ctx.fillStyle = "black";
-    ctx.fillText(this.text, this.x + .5 * sq, this.y + .5 * sq);  
+    ctx.fillText(this.text, this.x + .25 * sq, this.y + .25 * sq);  
   };
 };
 
