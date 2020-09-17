@@ -81,6 +81,7 @@ display.prototype.draw =  function(){
   
   if(this.text){    
     ctx.font = "bold 16px sans-serif";
+    ctx.textBaseline = "top";
     ctx.fillStyle = "black";
     ctx.fillText(this.text, this.x + sq, this.y + sq);  
   };
