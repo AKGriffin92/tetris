@@ -26,6 +26,7 @@ function drawSquare(x, y, color) {
   ctx.fillRect(x, y, sq, sq);
 
   ctx.strokeStyle = "BLACK";
+  ctx.lineWidth = 1;
   ctx.strokeRect(x, y, sq,sq)
   
   // checks to see if square is above the board
