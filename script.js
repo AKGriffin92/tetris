@@ -20,14 +20,14 @@ const centerY = height / 2 - row * sq / 2;
 
 
 //draw a square
-function drawSquare(x, y, color) {
+function drawSquare(x, y, color, factor = 1) {
 
   ctx.fillStyle = color;
-  ctx.fillRect(x, y, sq, sq);
+  ctx.fillRect(x, y, factor * sq, factor * sq);
 
   ctx.strokeStyle = "BLACK";
   ctx.lineWidth = 1;
-  ctx.strokeRect(x, y, sq,sq)
+  ctx.strokeRect(x, y, factor * sq, factor * sq)
   
   // checks to see if square is above the board
   // only draws if below top of board
@@ -177,7 +177,7 @@ display.prototype.drawNext = function(nextPiece){
         let newX = (c * sq) + (length/2 * sq) + nextDisplay.centerX;
         let newY = (r * sq) + (length/2 * sq) + nextDisplay.centerY;
         
-        drawSquare(newX, newY, nextPiece.color);      
+        drawSquare(newX, newY, nextPiece.color, .5);      
       };
     };
   }; 
