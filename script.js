@@ -50,8 +50,8 @@ function drawBoard(){
   for(r = 0; r < row; r++){
     for(c = 0; c < col; c++){
       // plus square adds padding around board
-      let newX = c * sq + sq
-      let newY = r * sq + sq
+      let newX = c * sq + .5 * sq;
+      let newY = r * sq + .5 * sq;
       drawSquare(newX, newY, board[r][c]);
     };
   };
@@ -62,8 +62,8 @@ drawBoard();
 // create a new display
 
 function display( x, y, w, h, text){
-  this.x = x * sq + sq;
-  this.y = y * sq + sq;
+  this.x = x * .5 * sq + sq;
+  this.y = y * .5 * sq + sq;
   this.w = w * sq;
   this.h = h * sq;
   this.centerX = this.x + w / 2;
