@@ -177,8 +177,8 @@ display.prototype.drawNext = function(nextPiece){
     for(c = 0; c < length; c++){
       if(nextPiece.activeTetromino[r][c]){
         
-        let newX = (c * newSq) + (length/2 * newSq ) + nextDisplay.centerX;
-        let newY = (r * newSq) + (length/2 * newSq) + nextDisplay.centerY;
+        let newX = (c * newSq) + nextDisplay.centerX - (length/2 * newSq );
+        let newY = (r * newSq) + nextDisplay.centerY - (length/2 * newSq);
         
         drawSquare(newX, newY, nextPiece.color, factor);      
       };
