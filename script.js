@@ -61,13 +61,13 @@ drawBoard();
 
 // create a new display
 
-function display( x, y, w, h, text){
-  this.x = x * sq + .5 * sq;
-  this.y = y * sq + .5 * sq;
-  this.w = w * sq;
-  this.h = h * sq;
-  this.centerX = this.x + this.w / 2;
-  this.centerY = this.y + this.h / 2;
+function display( coordX, coordY, width, height, text){
+  this.x = coordX * sq + .5 * sq;
+  this.y = coordY * sq + .5 * sq;
+  this.w = width * sq;
+  this.h = height * sq;
+  this.centerX = (this.x + this.w) / 2;
+  this.centerY = (this.y + this.h) / 2;
   this.text = text  
   this.color = "rgba(0, 0, 0, 0.5)";
 
