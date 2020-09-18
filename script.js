@@ -64,8 +64,8 @@ drawBoard();
 function display( x, y, w, h, text){
   this.x = x * sq;
   this.y = y * sq;
-  this.w = w;
-  this.h = h;
+  this.w = w * sq;
+  this.h = h * sq;
   this.centerX = this.x + w / 2;
   this.centerY = this.y + h / 2;
   this.text = text  
@@ -75,13 +75,13 @@ function display( x, y, w, h, text){
 
 // draw display
 display.prototype.draw =  function(){
-  ctx.clearRect(this.x, this.y, this.w*sq, this.h*sq);
+  ctx.clearRect(this.x, this.y, this.w, this.h);
   ctx.fillStyle = this.color;
-  ctx.fillRect(this.x, this.y, this.w*sq, this.h*sq);  
+  ctx.fillRect(this.x, this.y, this.w, this.h);  
 
   ctx.strokeStyle = "BLACK";
   ctx.lineWidth = 2;
-  ctx.strokeRect(this.x, this.y, this.w*sq, this.h*sq)
+  ctx.strokeRect(this.x, this.y, this.w, this.h)
   
   if(this.text){    
     ctx.font = "bold 16px sans-serif";
