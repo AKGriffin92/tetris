@@ -48,9 +48,10 @@ for(r=0; r < row; r++){
 //draw game board
 function drawBoard(){
   for(r = 0; r < row; r++){
-    for(c = 0; c < col; c++){ 
-      let newX = c * sq //+ centerX
-      let newY = r * sq //+ centerY
+    for(c = 0; c < col; c++){
+      // plus square adds padding around board
+      let newX = c * sq + sq
+      let newY = r * sq + sq
       drawSquare(newX, newY, board[r][c]);
     };
   };
@@ -65,6 +66,8 @@ function display( x, y, w, h, text){
   this.y = y * sq;
   this.w = w;
   this.h = h;
+  this.centerX = this.x + w / 2;
+  this.centerY = this.y + h / 2;
   this.text = text  
   this.color = "rgba(0, 0, 0, 0.5)";
 
@@ -170,11 +173,9 @@ display.prototype.drawNext = function(nextPiece){
   for(r = 0; r < length; r++){
     for(c = 0; c < length; c++){
       if(nextPiece.activeTetromino[r][c]){
-        paddingY = length < 3 ? 2.5 * sq : length < 4 ? 1.5 * sq : sq;
-        paddingX = length < 3 ? 1.5 * sq : length < 4 ? sq : .5 * sq;
         
-        let newX = (c * sq) + this.x + paddingX;
-        let newY = (r * sq) + this.y + paddingY;
+        let newX = length/2 + nextDisplay.centerX;
+        let newY = length/2 + nextDisplay.centerY;
         
         drawSquare(newX, newY, nextPiece.color);      
       };
