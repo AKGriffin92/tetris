@@ -66,8 +66,8 @@ function display( coordX, coordY, width, height, text){
   this.y = coordY * sq + .5 * sq;
   this.w = width * sq;
   this.h = height * sq;
-  this.centerX = this.x + this.w / 2;
-  this.centerY = this.y + this.h / 2;
+  this.centerX = coordX + width / 2;
+  this.centerY = coordY + height / 2;
   this.text = text  
   this.color = "rgba(0, 0, 0, 0.5)";
 
