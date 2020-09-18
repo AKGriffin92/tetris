@@ -62,8 +62,8 @@ drawBoard();
 // create a new display
 
 function display( x, y, w, h, text){
-  this.x = x * .5 * sq + sq;
-  this.y = y * .5 * sq + sq;
+  this.x = x * sq + .5 * sq;
+  this.y = y * sq + .5 * sq;
   this.w = w * sq;
   this.h = h * sq;
   this.centerX = this.x + w / 2;
