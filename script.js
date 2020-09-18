@@ -60,10 +60,9 @@ drawBoard();
 
 // create a new display
 
-function display(column, x, y, w, h, text){
-  this.column = column;
-  this.x = (x * sq + centerX) * (column - 1);
-  this.y = y * sq + centerY
+function display( x, y, w, h, text){
+  this.x = x * sq;
+  this.y = y * sq;
   this.w = w;
   this.h = h;
   this.text = text  
@@ -89,10 +88,10 @@ display.prototype.draw =  function(){
   };
 };
 
-let nextDisplay = new display(3, 0, 0, 5, 5.5, "NEXT");
-let rowDisplay = new display(3, 0, 6, 5, 3, "ROWS");
-let levelDisplay = new display(3, 0, 10, 5, 3, "LEVEL");
-let scoreDisplay = new display(3, 0, 14, 5, 3, "SCORE");
+let nextDisplay = new display(0, 0, 5, 5.5, "NEXT");
+let rowDisplay = new display(0, 6, 5, 3, "ROWS");
+let levelDisplay = new display(0, 10, 5, 3, "LEVEL");
+let scoreDisplay = new display(0, 14, 5, 3, "SCORE");
 
 nextDisplay.draw();
 rowDisplay.draw();
@@ -162,6 +161,9 @@ piece.prototype.undraw = function() {
 };
 
 // display next piece
+
+// TRY THIS
+// let nextDisplay 
 display.prototype.drawNext = function(nextPiece){
   nextDisplay.draw();
   let length = nextPiece.activeTetromino.length
