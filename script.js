@@ -169,15 +169,18 @@ piece.prototype.undraw = function() {
 // let nextDisplay 
 display.prototype.drawNext = function(nextPiece){
   nextDisplay.draw();
+  
+  let factor = .5;
+  let newSq = factor * sq;
   let length = nextPiece.activeTetromino.length
   for(r = 0; r < length; r++){
     for(c = 0; c < length; c++){
       if(nextPiece.activeTetromino[r][c]){
         
-        let newX = (c * sq) + (length/2 * sq) + nextDisplay.centerX;
-        let newY = (r * sq) + (length/2 * sq) + nextDisplay.centerY;
+        let newX = (c * newSq) + (length/2 * newSq ) + nextDisplay.centerX;
+        let newY = (r * newSq) + (length/2 * newSq) + nextDisplay.centerY;
         
-        drawSquare(newX, newY, nextPiece.color, .5);      
+        drawSquare(newX, newY, nextPiece.color, factor);      
       };
     };
   }; 
