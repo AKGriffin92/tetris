@@ -6,22 +6,20 @@ const width = cvs.width;
 
 const row = 20;
 const col = 10;
-
-let paddingHalf = .5
-let paddingThird = 10/3
-let boardHeight = 20
-let boardWidth = 10
-let uiHeight = 3
-let uiWidth2 = 2
-let uiWidth3 = 3
-
-const sq = width / (boardWidth + paddingHalf*2);
+const sq = width / (col + col/col);
 const vacant = "white";
 
 let rowCount = 0;
 let level = 0;
 let score = 0;
 
+let paddingHalf = .5 * sq;
+let paddingThird = 10/3 * sq;
+let boardHeight = 20 * sq;
+let boardWidth = 10 * sq;
+let uiHeight = 3 * sq;
+let uiWidth2 = 2 * sq;
+let uiWidth3 = 3 * sq;
 
 
 let displays = [];
