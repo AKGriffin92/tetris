@@ -17,7 +17,7 @@ let paddingHalf = .5 * sq;
 let paddingThird = 1/3 * sq;
 let boardHeight = 20 * sq;
 let boardWidth = 10 * sq;
-let uiHeight = 3 * sq;
+let uiHeight = 3 * sq - 1/3 * sq;
 let uiWidth2 = 2 * sq;
 let uiWidth3 = 3 * sq;
 
@@ -59,7 +59,7 @@ function drawBoard(){
   for(r = 0; r < row; r++){
     for(c = 0; c < col; c++){
       let newX = c * sq + paddingHalf;
-      let newY = r * sq + paddingHalf + uiHeight;
+      let newY = r * sq + paddingHalf + uiHeight + paddingThird;
       drawSquare(newX, newY, board[r][c]);
     };
   };
@@ -151,7 +151,7 @@ piece.prototype.fill = function(color) {
     for(c = 0; c < this.activeTetromino.length; c++){
       if(this.activeTetromino[r][c]){
         let newX = (this.x + c) * sq + paddingHalf;
-        let newY = (this.y + r) * sq + paddingHalf + uiHeight;
+        let newY = (this.y + r) * sq + paddingHalf + uiHeight + paddingThird;
         if(newY >= paddingHalf + uiHeight){
           drawSquare(newX, newY, color);
         };
