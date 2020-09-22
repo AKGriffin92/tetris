@@ -80,6 +80,8 @@ function display( text = "",coordX, coordY, width, height,){
   this.centerX = coordX + this.w / 2;
   this.centerY = coordY + this.h / 2;
   this.color = "rgba(0, 0, 0, 0.25)";
+  
+  displays.push(this);
 
 };
 
