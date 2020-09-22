@@ -58,7 +58,6 @@ for(r=0; r < row; r++){
 function drawBoard(){
   for(r = 0; r < row; r++){
     for(c = 0; c < col; c++){
-      // plus square adds padding around board
       let newX = c * sq + paddingHalf;
       let newY = r * sq + paddingHalf + uiHeight;
       drawSquare(newX, newY, board[r][c]);
@@ -157,8 +156,8 @@ piece.prototype.fill = function(color) {
   for(r = 0; r < this.activeTetromino.length; r++){
     for(c = 0; c < this.activeTetromino.length; c++){
       if(this.activeTetromino[r][c]){
-        let newX = (this.x + c) * sq; //+ centerX
-        let newY = (this.y + r) * sq; //+ centerY
+        let newX = (this.x + c) * sq;
+        let newY = (this.y + r) * sq + paddingHalf + uiHeight;
         drawSquare(newX, newY, color);
       };
     };
