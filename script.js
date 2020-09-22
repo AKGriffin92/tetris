@@ -6,7 +6,7 @@ const width = cvs.width;
 
 const row = 20;
 const col = 10;
-const sq = height / (row + 2);
+const sq = height / (row + 4);
 const vacant = "white";
 
 let rowCount = 0;
