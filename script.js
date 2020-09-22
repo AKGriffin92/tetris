@@ -59,8 +59,8 @@ function drawBoard(){
   for(r = 0; r < row; r++){
     for(c = 0; c < col; c++){
       // plus square adds padding around board
-      let newX = c * sq + .5 * sq;
-      let newY = r * sq + .5 * sq;
+      let newX = c * sq + paddingHalf;
+      let newY = r * sq + paddingHalf + uiHeight;
       drawSquare(newX, newY, board[r][c]);
     };
   };
