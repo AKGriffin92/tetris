@@ -70,16 +70,15 @@ drawBoard();
 
 // create a new display
 
-function display( coordX, coordY, width, height, text = ""){
-  displays.push(this)
+function display( text = "",coordX, coordY, width, height,){
   
+  this.text = text  
   this.x = coordX * sq;
   this.y = coordY * sq;
   this.w = width * sq;
   this.h = height * sq;
   this.centerX = coordX + this.w / 2;
   this.centerY = coordY + this.h / 2;
-  this.text = text  
   this.color = "rgba(0, 0, 0, 0.25)";
 
 };
@@ -102,12 +101,13 @@ display.prototype.draw =  function(){
   };
 };
 
-let nextDisplay = new display(0, 0, 5, 5.5, "NEXT");
-let rowDisplay = new display(0, 6, 5, 3, "ROWS");
-let levelDisplay = new display(0, 10, 5, 3, "LEVEL");
-let scoreDisplay = new display(0, 14, 5, 3, "SCORE");
-let boardDisplay = new display(0, 14, 5, 3, "SCORE");
+let boardDisplay = new display( "BOARD", 0, 14, 5, 3);
+let nextDisplay = new display( "NEXT", 0, 0, 5, 5.5);
+let rowDisplay = new display( "ROWS", 0, 6, 5, 3);
+let levelDisplay = new display("LEVEL", 0, 10, 5, 3);
+let scoreDisplay = new display( "SCORE", 0, 14, 5, 3);
 
+boardDisplay.draw();
 nextDisplay.draw();
 rowDisplay.draw();
 levelDisplay.draw();
