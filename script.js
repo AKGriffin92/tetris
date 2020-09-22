@@ -71,6 +71,7 @@ drawBoard();
 // create a new display
 
 function display( coordX, coordY, width, height, text = ""){
+  displays.push(this)
   
   this.x = coordX * sq;
   this.y = coordY * sq;
