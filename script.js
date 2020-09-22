@@ -76,6 +76,8 @@ function display( text = "", coordX, width){
   this.width = width;
   this.height = uiHeight;
   this.color = "rgba(0, 0, 0, 0.25)";
+  this.centerX = this.x + this.width / 2;
+  this.centerY = this.y + this.height / 2;
 };
 
 // draw display
