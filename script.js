@@ -14,7 +14,7 @@ let level = 0;
 let score = 0;
 
 let paddingHalf = .5 * sq;
-let paddingThird = 10/3 * sq;
+let paddingThird = 1/3 * sq;
 let boardHeight = 20 * sq;
 let boardWidth = 10 * sq;
 let uiHeight = 3 * sq;
