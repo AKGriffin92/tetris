@@ -109,7 +109,7 @@ let rowDisplay = new display( "ROWS", 0, 6, uiWidth2, uiHeight);
 let levelDisplay = new display("LEVEL", 0, 10, uiWidth2, uiHeight);
 let scoreDisplay = new display( "SCORE", 0, 14, uiWidth2, uiHeight);
 
-boardDisplay.draw();
+//boardDisplay.draw();
 nextDisplay.draw();
 rowDisplay.draw();
 levelDisplay.draw();
