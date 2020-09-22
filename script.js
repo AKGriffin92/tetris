@@ -14,6 +14,15 @@ let level = 0;
 let score = 0;
 
 
+let paddingHalf = .5 * sq
+let paddingThird = 10/3 * sq
+let boardHeight = 20 * sq
+let boardWidth = 10 * sq
+let uiHeight = 3 * sq
+let uiWidth2 = 2 * sq
+let uiWidth3 = 3 * sq
+
+let displays = [];
 
 const centerX = width / 2 - col * sq / 2;
 const centerY = height / 2 - row * sq / 2;
@@ -61,7 +70,8 @@ drawBoard();
 
 // create a new display
 
-function display( coordX, coordY, width, height, text){
+function display( coordX, coordY, width, height, text = ""){
+  
   this.x = coordX * sq;
   this.y = coordY * sq;
   this.w = width * sq;
@@ -69,7 +79,7 @@ function display( coordX, coordY, width, height, text){
   this.centerX = coordX + this.w / 2;
   this.centerY = coordY + this.h / 2;
   this.text = text  
-  this.color = "rgba(0, 0, 0, 0.5)";
+  this.color = "rgba(0, 0, 0, 0.25)";
 
 };
 
@@ -95,6 +105,7 @@ let nextDisplay = new display(0, 0, 5, 5.5, "NEXT");
 let rowDisplay = new display(0, 6, 5, 3, "ROWS");
 let levelDisplay = new display(0, 10, 5, 3, "LEVEL");
 let scoreDisplay = new display(0, 14, 5, 3, "SCORE");
+let boardDisplay = new display(0, 14, 5, 3, "SCORE");
 
 nextDisplay.draw();
 rowDisplay.draw();
