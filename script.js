@@ -89,7 +89,7 @@ display.prototype.draw =  function(){
   ctx.strokeRect( this.x , this.y , this.width , this.height )
   
   if(this.text){    
-    ctx.font = "bold 12px sans-serif";
+    ctx.font = "bold 10px sans-serif";
     ctx.textBaseline = "top";
     ctx.fillStyle = "black";
     ctx.fillText(this.text, this.x + .25 * sq, this.y + .25 * sq);  
