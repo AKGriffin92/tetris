@@ -77,13 +77,10 @@ function display( text = "", width){
   displays.push(this);
 
   this.text = text
-  this.w = width;
-  this.h = uiHeight;
+  this.width = width;
+  this.height = uiHeight;
   this.color = "rgba(0, 0, 0, 0.25)";
-};
-
-// postition display
-display.prototype.position = function(){  
+    
   let index = displays.indexOf(this);
   let previousWidth;  
   for(let i = 0; i>= index; i++){
@@ -118,7 +115,6 @@ let levelDisplay = new display("LEVEL", uiWidth2);
 let scoreDisplay = new display( "SCORE", uiWidth2);
 
 //boardDisplay.draw();
-nextDisplay.position();
 nextDisplay.draw();
 rowDisplay.draw();
 levelDisplay.draw();
