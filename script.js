@@ -75,6 +75,12 @@ drawBoard();
 function display( text = "", width){
   
   displays.push(this);
+
+  this.text = text
+  this.w = width;
+  this.h = uiHeight;
+  this.color = "rgba(0, 0, 0, 0.25)";  
+  
   let index = displays.indexOf(this);
   let previousWidth;  
   for(let i = 0; i>= index; i++){
@@ -82,15 +88,10 @@ function display( text = "", width){
       previousWidth += displays[i].width;
     };
   };
-
-  this.text = text  
   this.x = paddingHalf + paddingThird * index + previousWidth;
   this.y = paddingHalf;
-  this.w = width;
-  this.h = uiHeight;
   this.centerX = coordX + this.w / 2;
   this.centerY = coordY + this.h / 2;
-  this.color = "rgba(0, 0, 0, 0.25)";
 
 };
 
