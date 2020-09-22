@@ -84,9 +84,7 @@ function display( text = "", width){
   let index = displays.indexOf(this);
   let previousWidth;  
   for(let i = 0; i>= index; i++){
-    if(displays[i].text != "BOARD"){
-      previousWidth += displays[i].width;
-    };
+    previousWidth += displays[i].width;
   };
   this.x = paddingHalf + paddingThird * index + previousWidth;
   this.y = paddingHalf;
