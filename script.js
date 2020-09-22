@@ -80,13 +80,13 @@ function display( text = "", coordX, width){
 
 // draw display
 display.prototype.draw =  function(){
-  ctx.clearRect(this.x, this.y, this.w, this.h);
+  ctx.clearRect( this.x , this.y , this.width , this.height );
   ctx.fillStyle = this.color;
-  ctx.fillRect(this.x, this.y, this.w, this.h);  
+  ctx.fillRect( this.x , this.y , this.width , this.height );  
 
   ctx.strokeStyle = "BLACK";
   ctx.lineWidth = 2;
-  ctx.strokeRect(this.x, this.y, this.w, this.h)
+  ctx.strokeRect( this.x , this.y , this.width , this.height )
   
   if(this.text){    
     ctx.font = "bold 16px sans-serif";
