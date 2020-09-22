@@ -85,7 +85,7 @@ display.prototype.draw =  function(){
   ctx.fillRect( this.x , this.y , this.width , this.height );  
 
   ctx.strokeStyle = "BLACK";
-  ctx.lineWidth = 2;
+  ctx.lineWidth = 1;
   ctx.strokeRect( this.x , this.y , this.width , this.height )
   
   if(this.text){    
