@@ -93,8 +93,9 @@ display.prototype.draw =  function(){
   if(this.text){    
     ctx.font = "bold 10px sans-serif";
     ctx.textBaseline = "top";
+    ctx.textAlign = "center";
     ctx.fillStyle = "black";
-    ctx.fillText(this.text, this.x + .25 * sq, this.y + .25 * sq);  
+    ctx.fillText(this.text, this.centerX, this.y);  
   };
 };
 
