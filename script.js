@@ -23,9 +23,6 @@ let uiWidth3 = 3 * sq;
 
 
 let displays = [];
-let uiPositions = [];
-
-
 
 const centerX = width / 2 - col * sq / 2;
 const centerY = height / 2 - row * sq / 2;
@@ -73,9 +70,6 @@ drawBoard();
 // create a new display
 
 function display( text = "", width){
-  
-  displays.push(this);
-
   this.text = text
   this.width = width;
   this.height = uiHeight;
@@ -117,6 +111,8 @@ let nextDisplay = new display( "NEXT", uiWidth3);
 let rowDisplay = new display( "ROWS", uiWidth2);
 let levelDisplay = new display("LEVEL", uiWidth2);
 let scoreDisplay = new display( "SCORE", uiWidth2);
+
+displays.push(nextDisplay, rowDisplay, levelDisplay, scoreDisplay);
 
 //boardDisplay.draw();
 nextDisplay.position();
