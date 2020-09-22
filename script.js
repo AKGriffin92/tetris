@@ -15,7 +15,7 @@ let uiHeight = 3
 let uiWidth2 = 2
 let uiWidth3 = 3
 
-const sq = height / (boardHeight + uiHeight + paddingHalf * 2);
+const sq = width / (boardWidth + paddingHalf*2);
 const vacant = "white";
 
 let rowCount = 0;
