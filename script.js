@@ -158,7 +158,9 @@ piece.prototype.fill = function(color) {
       if(this.activeTetromino[r][c]){
         let newX = (this.x + c) * sq;
         let newY = (this.y + r) * sq + paddingHalf + uiHeight;
-        drawSquare(newX, newY, color);
+        if(newY > paddingHalf + uiHeight){
+          drawSquare(newX, newY, color);
+        };
       };
     };
   };
