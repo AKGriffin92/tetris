@@ -23,6 +23,9 @@ let uiWidth3 = 3 * sq;
 
 
 let displays = [];
+let uiPositions = [];
+
+
 
 const centerX = width / 2 - col * sq / 2;
 const centerY = height / 2 - row * sq / 2;
@@ -69,18 +72,25 @@ drawBoard();
 
 // create a new display
 
-function display( text = "",coordX, coordY, width, height,){
+function display( text = "", width){
   
+  displays.push(this);
+  let index = displays.indexOf(this);
+  let previousWidth;  
+  for(i = 0; i>= index; i++){
+    if(displays[i].text != "BOARD"){
+      previousWidth += displays[i].width;
+    };
+  };
+
   this.text = text  
-  this.x = coordX * sq;
-  this.y = coordY * sq;
+  this.x = paddingHalf + paddingThird * index + previousWidth;
+  this.y = paddingHalf;
   this.w = width;
-  this.h = height;
+  this.h = uiHeight;
   this.centerX = coordX + this.w / 2;
   this.centerY = coordY + this.h / 2;
   this.color = "rgba(0, 0, 0, 0.25)";
-  
-  displays.push(this);
 
 };
 
@@ -103,10 +113,10 @@ display.prototype.draw =  function(){
 };
 
 //let boardDisplay = new display( "BOARD", 0, 14, 5, 3);
-let nextDisplay = new display( "NEXT", 0, 0, uiWidth3, uiHeight);
-let rowDisplay = new display( "ROWS", 0, 6, uiWidth2, uiHeight);
-let levelDisplay = new display("LEVEL", 0, 10, uiWidth2, uiHeight);
-let scoreDisplay = new display( "SCORE", 0, 14, uiWidth2, uiHeight);
+let nextDisplay = new display( "NEXT", uiWidth3);
+let rowDisplay = new display( "ROWS", uiWidth2);
+let levelDisplay = new display("LEVEL", uiWidth2);
+let scoreDisplay = new display( "SCORE", uiWidth2);
 
 //boardDisplay.draw();
 nextDisplay.draw();
