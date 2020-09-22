@@ -95,7 +95,7 @@ display.prototype.draw =  function(){
     ctx.textBaseline = "top";
     ctx.textAlign = "center";
     ctx.fillStyle = "black";
-    ctx.fillText(this.text, this.centerX, this.y + paddingHalf * .5 );  
+    ctx.fillText(this.text, this.centerX, this.y + paddingHalf * .1 );  
   };
 };
 
