@@ -77,7 +77,7 @@ function display( text = "", width){
   displays.push(this);
   let index = displays.indexOf(this);
   let previousWidth;  
-  for(i = 0; i>= index; i++){
+  for(let i = 0; i>= index; i++){
     if(displays[i].text != "BOARD"){
       previousWidth += displays[i].width;
     };
