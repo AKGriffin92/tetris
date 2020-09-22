@@ -103,11 +103,11 @@ display.prototype.draw =  function(){
   };
 };
 
-let boardDisplay = new display( "BOARD", 0, 14, 5, 3);
-let nextDisplay = new display( "NEXT", 0, 0, 5, 5.5);
-let rowDisplay = new display( "ROWS", 0, 6, 5, 3);
-let levelDisplay = new display("LEVEL", 0, 10, 5, 3);
-let scoreDisplay = new display( "SCORE", 0, 14, 5, 3);
+//let boardDisplay = new display( "BOARD", 0, 14, 5, 3);
+let nextDisplay = new display( "NEXT", 0, 0, uiWidth3, uiHeight);
+let rowDisplay = new display( "ROWS", 0, 6, uiWidth2, uiHeight);
+let levelDisplay = new display("LEVEL", 0, 10, uiWidth2, uiHeight);
+let scoreDisplay = new display( "SCORE", 0, 14, uiWidth2, uiHeight);
 
 boardDisplay.draw();
 nextDisplay.draw();
