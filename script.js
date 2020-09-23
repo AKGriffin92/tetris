@@ -36,7 +36,7 @@ function drawSquare(x, y, color, factor = 1) {
   ctx.fillRect(x, y, factor * sq, factor * sq);
 
   ctx.strokeStyle = "BLACK";
-  ctx.lineWidth = 1;
+  ctx.lineWidth = 2;
   ctx.strokeRect(x, y, factor * sq, factor * sq)
   
   // checks to see if square is above the board
@@ -88,7 +88,7 @@ display.prototype.draw =  function(){
   ctx.fillRect( this.x , this.y , this.width , this.height );  
 
   ctx.strokeStyle = "BLACK";
-  ctx.lineWidth = 1;
+  ctx.lineWidth = 2;
   ctx.strokeRect( this.x , this.y , this.width , this.height )
   
   if(this.text){
