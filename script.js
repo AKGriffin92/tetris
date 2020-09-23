@@ -90,8 +90,9 @@ display.prototype.draw =  function(){
   ctx.lineWidth = 1;
   ctx.strokeRect( this.x , this.y , this.width , this.height )
   
-  if(this.text){    
-    ctx.font = "bold verdana";
+  if(this.text){
+    let fontSize = sq;
+    ctx.font = "bold fontSize verdana";
     ctx.textBaseline = "top";
     ctx.textAlign = "center";
     ctx.fillStyle = "black";
