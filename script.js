@@ -10,7 +10,7 @@ const sq = height / (24 + 1/3);
 const vacant = "white";
 
 let rowCount = 0;
-let level = 0;
+let level = 1;
 let score = 0;
 
 let paddingHalf = .5 * sq;
@@ -22,14 +22,10 @@ let uiHeight = 3 * sq - 1/3 * sq;
 let uiWidth2 = 2 * sq;
 let uiWidth3 = 3 * sq;
 
-
 let displays = [];
 
 const centerX = width / 2 - col * sq / 2;
 const centerY = height / 2 - row * sq / 2;
-
-
-
 
 //draw a square
 function drawSquare(x, y, color, factor = 1) {
@@ -201,6 +197,16 @@ display.prototype.drawNext = function(nextPiece){
   }; 
 };
 
+display.prototype.showStat = function ( stat ) {
+  
+  this.draw();
+  
+  ctx.font = " bold 16px verdana "
+  ctx.textBaseline = "middle";
+  ctx.textAlign = "center";
+  ctx.fillStyle = "black";
+  ctx.fillText( stat , this.centerX ,  this.centerY )
+};
 
 //move down the piece
 piece.prototype.moveDown = function (){
@@ -310,6 +316,8 @@ piece.prototype.lock = function(){
       if(rowCount % 5 === 0){
         level++
       };
+      
+      displayStats();
     };
   };
   drawBoard();
@@ -394,6 +402,12 @@ piece.prototype.resetTimer = function(){
     secondTimer = 1;
   };
 
+};
+
+function displayStats (){
+  rowDisplay.showStat( rowCount );
+  levelDisplay.showStat( level );
+  scoreDisplay.showStat( score );
 };
 
 p.draw();
