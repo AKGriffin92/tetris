@@ -298,7 +298,7 @@ piece.prototype.lock = function(){
     if(isRowFull){      
       // if row is full
       // move down all rows above it
-      for(y = r; y > 1; y--){
+      for(y = r; y > 0; y--){
         for(c = 0; c < col; c++){
           board[y][c] = board[y-1][c]
         };
