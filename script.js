@@ -92,7 +92,7 @@ display.prototype.draw =  function(){
   
   if(this.text){
     let fontSize = sq + "px";
-    ctx.font = "bold 18.181818181818183px verdana";
+    ctx.font = "bold 12px verdana";
     ctx.textBaseline = "top";
     ctx.textAlign = "center";
     ctx.fillStyle = "black";
