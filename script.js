@@ -10,7 +10,10 @@ const sq = height / (24 + 1/3);
 const vacant = "white";
 
 let rowCount = 0;
-let level = 0;
+let level = () => {
+  if(rowCount != 0 && rowCount % 5 === 0)
+    return rowCount / 5
+};
 let score = 0;
 
 let paddingHalf = .5 * sq;
