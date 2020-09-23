@@ -412,4 +412,5 @@ function displayStats (){
 
 p.draw();
 nextDisplay.drawNext(next);
+displayStats();
 drop();
