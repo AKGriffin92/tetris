@@ -11,8 +11,9 @@ const vacant = "white";
 
 let rowCount = 0;
 let level = () => {
-  if(rowCount != 0 && rowCount % 5 === 0)
+  if(rowCount != 0 && rowCount % 5 === 0){
     return rowCount / 5
+  };
 };
 let score = 0;
 
