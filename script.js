@@ -154,7 +154,7 @@ piece.prototype.fill = function(color) {
   for(r = 0; r < this.activeTetromino.length; r++){
     for(c = 0; c < this.activeTetromino.length; c++){
       if(this.activeTetromino[r][c]){
-        let newX = (this.x + c) * sq + paddingHalf;
+        let newX = (this.x + c) * sq + padding175;
         let newY = (this.y + r) * sq + paddingHalf + uiHeight + paddingThird;
         if(newY >= paddingHalf + uiHeight){
           drawSquare(newX, newY, color);
