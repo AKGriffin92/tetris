@@ -6,6 +6,8 @@
 
 canvas {
   outline: black solid 3px;
+  heigth: 90vh;
+  width: auto;
   margin: auto;
   display: block;
 }
