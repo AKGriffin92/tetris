@@ -91,7 +91,7 @@ display.prototype.draw =  function(){
   ctx.strokeRect( this.x , this.y , this.width , this.height )
   
   if(this.text){    
-    ctx.font = "bold fantasy";
+    ctx.font = "bold verdana";
     ctx.textBaseline = "top";
     ctx.textAlign = "center";
     ctx.fillStyle = "black";
