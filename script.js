@@ -15,6 +15,7 @@ let score = 0;
 
 let paddingHalf = .5 * sq;
 let paddingThird = 1/3 * sq;
+let padding175 = 1.75 * sq;
 let boardHeight = 20 * sq;
 let boardWidth = 10 * sq;
 let uiHeight = 3 * sq - 1/3 * sq;
@@ -58,7 +59,7 @@ for(r=0; r < row; r++){
 function drawBoard(){
   for(r = 0; r < row; r++){
     for(c = 0; c < col; c++){
-      let newX = c * sq + paddingHalf;
+      let newX = c * sq + padding175;
       let newY = r * sq + paddingHalf + uiHeight + paddingThird;
       drawSquare(newX, newY, board[r][c]);
     };
@@ -100,10 +101,10 @@ display.prototype.draw =  function(){
 };
 
 //let boardDisplay = new display( "BOARD", 0, 14, 5, 3);
-let nextDisplay = new display( "NEXT", paddingHalf , uiWidth3 );
-let rowDisplay = new display( "ROWS" , paddingHalf + uiWidth3 + paddingThird , uiWidth2 );
-let levelDisplay = new display("LEVEL" , paddingHalf + uiWidth3 + paddingThird + uiWidth2 + paddingThird , uiWidth2);
-let scoreDisplay = new display( "SCORE" , paddingHalf + uiWidth3 + paddingThird + uiWidth2 + paddingThird + uiWidth2 + paddingThird, uiWidth2 );
+let nextDisplay = new display( "NEXT", padding175 , uiWidth3 );
+let rowDisplay = new display( "ROWS" , padding175 + uiWidth3 + paddingThird , uiWidth2 );
+let levelDisplay = new display("LEVEL" , padding175 + uiWidth3 + paddingThird + uiWidth2 + paddingThird , uiWidth2);
+let scoreDisplay = new display( "SCORE" , padding175 + uiWidth3 + paddingThird + uiWidth2 + paddingThird + uiWidth2 + paddingThird, uiWidth2 );
 
 //boardDisplay.draw();
 nextDisplay.draw();
