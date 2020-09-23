@@ -10,11 +10,7 @@ const sq = height / (24 + 1/3);
 const vacant = "white";
 
 let rowCount = 0;
-let level = () => {
-  if(rowCount != 0 && rowCount % 5 === 0){
-    return rowCount / 5
-  };
-};
+let level = 0;
 let score = 0;
 
 let paddingHalf = .5 * sq;
@@ -31,6 +27,8 @@ let displays = [];
 
 const centerX = width / 2 - col * sq / 2;
 const centerY = height / 2 - row * sq / 2;
+
+
 
 
 //draw a square
@@ -308,6 +306,10 @@ piece.prototype.lock = function(){
       // increment row count
       rowCount++;
       
+      // increment level every five rows
+      if(rowCount % 5 === 0){
+        level++
+      };
     };
   };
   drawBoard();
