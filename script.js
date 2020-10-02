@@ -326,7 +326,8 @@ piece.prototype.lock = function(){
       };
     };
     // increment score based on how many rows were cleared
-    score += (rowsCleared === 1 ? 10 : rowsCleared === 2 ? 100 : rowsCleared === 3 ? 300 : rowsCleared === 4 ? 1200 : 0)
+    console.log(rowsCleared);
+    score += (rowsCleared === 1 ? 10 : rowsCleared === 2 ? 100 : rowsCleared === 3 ? 300 : rowsCleared === 4 ? 1200 : 0);
   };
 
   // update stats
