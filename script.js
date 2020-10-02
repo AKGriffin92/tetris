@@ -287,9 +287,14 @@ piece.prototype.lock = function(){
       board[this.y + r][this.x + c] = this.color;
     };
   };
+  
   // remove full rows
+  // increase score
+  // increase row count
+  // increase level every 5 rows  
   for(r = 0; r < row; r++){
     let isRowFull = true;
+    let rowsCleared = 0;
     
     for(c = 0; c < col; c++){
       isRowFull = isRowFull && (board[r][c] != vacant);
@@ -309,14 +314,20 @@ piece.prototype.lock = function(){
         board[0][c] = vacant;
       };
       
-      // increment row count
+      // incement row count for this clear
+      rowsCleared++
+      
+      // increment row count for the game
       rowCount++;
+      
+      // increment score based on how many rows were cleared
+      score += (rowsCleared === 1 ? 10 : rowsCleared === 2 ? 100 : rowsCleared === 3 ? 300 : rowsCleared === 4 ? 1200 : 0)
       
       // increment level every five rows
       if(rowCount % 5 === 0){
         level++
       };
-      
+            
       displayStats();
     };
   };
