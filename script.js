@@ -320,17 +320,19 @@ piece.prototype.lock = function(){
       // increment row count for the game
       rowCount++;
       
-      // increment score based on how many rows were cleared
-      score += (rowsCleared === 1 ? 10 : rowsCleared === 2 ? 100 : rowsCleared === 3 ? 300 : rowsCleared === 4 ? 1200 : 0)
-      
       // increment level every five rows
       if(rowCount % 5 === 0){
         level++
       };
-            
-      displayStats();
     };
   };
+    // increment score based on how many rows were cleared
+  score += (rowsCleared === 1 ? 10 : rowsCleared === 2 ? 100 : rowsCleared === 3 ? 300 : rowsCleared === 4 ? 1200 : 0)
+
+  // update stats
+  displayStats();
+  
+  // redraw game board
   drawBoard();
 };
 
