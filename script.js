@@ -100,14 +100,14 @@ display.prototype.draw =  function(){
 
 //let boardDisplay = new display( "BOARD", 0, 14, 5, 3);
 let nextDisplay = new display( "NEXT", padding175 , uiWidth3 );
-let rowDisplay = new display( "ROWS" , padding175 + uiWidth3 + paddingThird , uiWidth2 );
-let levelDisplay = new display("LEVEL" , padding175 + uiWidth3 + paddingThird + uiWidth2 + paddingThird , uiWidth2);
+let levelDisplay = new display( "LEVEL" , padding175 + uiWidth3 + paddingThird , uiWidth2 );
+let rowDisplay = new display("ROWS" , padding175 + uiWidth3 + paddingThird + uiWidth2 + paddingThird , uiWidth2);
 let scoreDisplay = new display( "SCORE" , padding175 + uiWidth3 + paddingThird + uiWidth2 + paddingThird + uiWidth2 + paddingThird, uiWidth2 );
 
 //boardDisplay.draw();
 nextDisplay.draw();
-rowDisplay.draw();
 levelDisplay.draw();
+rowDisplay.draw();
 scoreDisplay.draw();
 
   //the pieces and their colors
